@@ -8,7 +8,7 @@
 
 因此，一个网络图（graph）可以记作：
 
-$$G=(V, E)$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=G=(V,E)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G=(V,E)" title="G=(V,E)" /></a>
 
 
 
