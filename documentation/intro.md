@@ -1,8 +1,6 @@
 # 网络分析方法及其在古汉语研究中的应用述要
 
-**摘要**：
 
-**关键词**：网络分析；系联；上古音
 
 ## 1. 网络分析的基本概念
 
@@ -12,41 +10,45 @@
 
 　　1.2 一个**网络图**（graph）可以用 $G=(V, E)$ 的形式表示。其中，结点的集合记作：
 
-$$V(G) = \{ v_1, v_2, v_3, ..., v_n \}$$
+$$V(G) = \{ v_1, v_2, v_3, ..., v_n \} \tag{1.1}$$
 
 边的集合记作：
 
-$$E(G)=\{e_1, e_2, e_3, ..., e_n\}$$
+$$E(G)=\{e_1, e_2, e_3, ..., e_n\} \tag{1.2}$$
 
-　　1.3 结点可以直接用小写字母表示。对于两个结点 $u,v \in V$ 所组成的边，在无向（undirected）图中记作 $\{u,v\}$，在有向（directed）图中则记作 $(u,v)$；在不必区分时，可以直接简写成 $u v$（参见 Brandes & Erlebach, [2005](https://link.springer.com/book/10.1007/b106453): §2.1）。
+图中的结点可以直接用小写字母表示。对于两个结点 $u,v \in V$ 所组成的边，在无向（undirected）图中记作 $\{u,v\}$，在有向（directed）图中则记作 $(u,v)$；在不作区分时，可以直接简写成 $u v$。
+
+　　1.3 关于图论和网络分析的更多内容可以参见 Brandes & Erlebach（[2005](https://link.springer.com/book/10.1007/b106453)）、Bondy & Murty（[2013](https://www.springer.com/gp/book/9781846289699)）等。
+
+
 
 ## 2. 网络图的实现方法
 
 　　2.1 通过计算机制作网络图的方法很多，主要有以下几类：
 
 1. [Python](https://www.python.org/) 语言，需要配合 [NetworkX](http://networkx.github.io/) 和 [Matplotlib](https://matplotlib.org/) 等扩展包（package）；
-2. [JavaScript](https://www.javascript.com) 脚本，较为流行的有 [ECharts.js](http://echarts.baidu.com/)、[Jexf.js](https://github.com/raphv/gexf-js)、[Sigma.js](http://sigmajs.org/) 或 [Vis.js](https://visjs.org/) 等；
+2. [JavaScript](https://www.javascript.com) 脚本，较为流行的有 [D3.js](https://d3js.org/)、[ECharts.js](http://echarts.baidu.com/)、[Jexf.js](https://github.com/raphv/gexf-js)、[Sigma.js](http://sigmajs.org/) 和 [Vis.js](https://visjs.org/) 等；
 3. 其他网络分析及其可视化软件，如 [AllegroGraph](https://allegrograph.com/)、[Gephi](https://gephi.org/) 、[NetMiner](http://www.netminer.com/main/main-read.do) 等。
 
-除此之外，还有 [R](https://www.r-project.org/) 语言等也可以实现类似的效果，具体情况可以参见维基百科的 [en:Social network analysis software](https://en.wikipedia.org/wiki/Social_network_analysis_software) 词条。
+除此之外，还有 [R](https://www.r-project.org/) 语言等工具或软件也可以实现类似的效果，具体情况可以参见维基百科的 [en:Social network analysis software](https://en.wikipedia.org/wiki/Social_network_analysis_software) 词条。
 
 　　由于篇幅所限，这里不打算介绍其具体的操作方法（可以参见[附录](#5.-附录)），只是对上述这三种方式的优缺点进行简要的评述。
 
-　　2.2 作为一门编程语言，Python 的使用需要安装相应的环境，而且所有设置都需要以编程命令的形式完成，因此相对而言直观性较差，学习和使用成本较高。但也正得益于此，Python 具有更强的可定制性，加之其开源、活跃的社区，让使用者可以根据自己的实际需要灵活调整其配置，并直接编写相关程序以展开后续的数据分析工作。
+　　2.2 作为一门编程语言，Python 的使用需要安装相应的环境，而且所有设置都需要以编程命令的形式完成，因此相对而言直观性较差，安装、学习的成本较高。但也正得益于此，Python 具有更强的可定制性，加之其开源、活跃的社区，让使用者可以根据自己的实际需要灵活调整其配置，并直接编写相关程序以展开后续的数据分析工作。
 
-　　通过 JavaScript 实现网络图制作与分析的脚本很多，选择丰富，其使用方式也不尽相同。总体说来，使用 JavaScript 同样要安装一定编程环境，还需要一些 HTML/CSS 的基础知识。但 JavaScript 作为一门 Web 编程语言，被广泛运用于几乎所有现代的 HTML 网页上，因而虽然处理数据的能力稍弱，但十分便于生成结果的查看和共享。
+　　通过 JavaScript 实现网络图制作与分析的脚本很多，选择丰富，其使用方式也不尽相同。总体说来，使用 JavaScript 同样要安装一定编程环境，还需要一些 HTML/CSS 的基础知识。但 JavaScript 作为一门 Web 编程语言，被广泛运用于几乎所有现代的 HTML 网页上，因此虽然其数据处理能力稍弱，但由于 JavaScript 不仅可以生成图片，更能够以可交互的形式应用在网页上，不受平台和软件格式的限制，十分便于结果的查看和共享。
 
-　　在网络分析软件中，Gephi 有较为直观的图形化界面，
+　　网络分析软件一般有较为直观的图形化界面，可以方便地导入、管理、分析数据，相对来说最易于掌握。其中的 Gephi 更是以其跨平台、开源易用、功能强大的特点，成为最流行的网络分析软件之一；但缺点在于打开速度相对较慢，而且生成的结果必须在特定软件中查看才能有一定交互性。
+
+　　2.3 通过上述分析，我们认为较好的解决方案是：用 Gephi 软件将原始数据制作成网络图，再将结果生成为 `.gexf` 格式（而非直接保存得到的 `.gephi` 文件）。这样，我们可以在 JavaScript 中直接调用网络图的数据文件制作 HTML 文档，或直接显示在 [Observable](https://observablehq.com/) 等平台上。通过这种方式，网络图的编辑制作简单直观，又利于查看
 
 
 
-## 3. 网络分析方法与音韵学
-
-### 3.1 音韵学
+## 3. 网络分析方法应用述要
 
 　　3.1.1 游函（List, [2016a](https://doi.org/10.1163/2405478X-00902004)）最早用网络分析方法系联了《诗经》押韵。
 
-　　3.1.2 游函（List, [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document)）利用网络分析方法对《广韵》中反切上字的分组现象作了考察。胡佳佳（[2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)）从音韵学教学的角度，介绍了网络分析方法在系联反切上字和下字时的作用。
+　　3.1.2 游函（List, [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document)）利用网络分析方法对《广韵》中反切上字的分组现象作了考察。胡佳佳（[2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)）从教学的角度，介绍了网络分析方法在系联反切上字和下字时的作用。
 
 ### 3.2 文字学
 
@@ -87,6 +89,7 @@ $$E(G)=\{e_1, e_2, e_3, ..., e_n\}$$
 - 北京师范大学汉字研究与现代应用实验室 （2019）汉字全息资源应用系统，http://qxk.bnu.edu.cn/。访问日期：2019 年 8 月 4 日。
 - 耿振生 （2004） 《20 世纪汉语音韵学方法论》，北京大学出版社。
 - 胡佳佳 （2018） [网络分析方法在音韵学教学中的应用——以《广韵》反切系联为例](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)，《励耘语言学刊》第 2 期，155-165 页。
+- Blondy, Adrian & Murty, Uppaluri S.R. (2013): [Graph Theory](https://www.springer.com/gp/book/9781846289699). 3rd ed. Berlin, Heidelberg: Springer-Verlag.
 - Brandes, Ulrik & Erlebach Thomas eds. (2005): [*Network Analysis: Methodological Foundations*](https://link.springer.com/book/10.1007/b106453). Berlin, Heidelberg: Springer-Verlag.
 - Hill, Nathan W. & List, Johann-Mattis (forthcoming): [Using Chinese character formation graphs to test proposals in Chinese historical phonology](http://lingulist.de/documents/papers/hill-list-2019-chinese-character-formation-graphs.pdf). *Bulletin of Chinese Linguistics*, 1-16.
 - Karlgren, Bernhard (1957): [Gramma Serica Recensa](http://ss.zhizhen.com/detail_38502727e7500f26f1ce104a15568ce8e2ee8db6d8d18d4d1921b0a3ea255101ff20232bc5d7271392ca6eb2c71318865155c5438fbb21eab02f26b59238cf601ee603dc6f3d002408283ada86f7e698?). *Bulletin of the Museum of Far Eastern Antiquities*, 29. 汉译本见高本汉：《[汉文典](http://ss.zhizhen.com/detail_38502727e7500f26ea2dfaed11771665fed4b47e2deecb0f1921b0a3ea25510134114c969f2eae5cc744720e3130b751ed88dfe5746c33d69cb51d43696fa7ef69b6d1a0a8fc4207fba42c3daf60db7d?&apistrclassfy=0_8_2)》，潘悟云、杨剑桥、陈重业、张洪明译，上海辞书出版社，1997。
