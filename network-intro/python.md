@@ -104,6 +104,19 @@ plt.savefig("graph.png") #保存为graph.png
 
 保存后运行这个程序（见 §1.2），稍等片刻后就可以得到一张空白的网络图了。
 
+　　**2.3** 下面我们开始学习如何添加结点和边。注意：有关结点和边的命令应该添加在 §2.2 和 §2.2 的内容之间，即下面例子中的 […] 位置：
+
+````python
+import networkx as nx
+import matplotlib.pyplot as plt
+G = nx.Graph()
+[...] #添加结点和边的信息
+nx.draw(G)
+plt.show()
+````
+
+
+
 ## 3. 结点
 
 　　结点可以逐个添加或批量添加：
@@ -121,6 +134,8 @@ G.remove_node('n') #删除结点n，或
 G.remove_nodes_from('u','v') #删除结点u、结点v
 ```
 
+
+
 ## 4. 边
 
 　　边的添加有两种方式，既可以像结点一样直接添加：
@@ -130,7 +145,7 @@ G.add_edge('u','v') #添加边uv，或
 G.add_edges_from([('u','v'),('p','q')]) #添加边uv、边pq
 ```
 
-也可以先定义一条边 $u v$，再作为一个整体添加：
+也可以先定义一条边 $u v$，再将其作为一个整体添加：
 
 ```python
 e=(u,v)
@@ -144,6 +159,8 @@ G.remove_edge('a','b') #删除边ab，或
 G.remove_edges_from([('a','b'),('c','d')]) #删除边ab、边cd
 ```
 
+
+
 ## 5. 实例
 
 　　至此为止，我们就可以得到一幅基本的网络图，更多功能可以参见[官方文档](https://networkx.github.io/documentation/stable/tutorial.html)。下面是一个简单的例子：
@@ -156,8 +173,10 @@ G.remove_edges_from([('a','b'),('c','d')]) #删除边ab、边cd
 import networkx as nx
 import matplotlib.pyplot as plt
 G = nx.Graph()
+
 G.add_nodes_from([1, 3])
 G.add_edges_from([(1, 2), (1, 3), (2, 3)])
+
 nx.draw(G, with_labels=True)
 plt.show()
 ```
