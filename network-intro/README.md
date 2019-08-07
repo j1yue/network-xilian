@@ -4,23 +4,23 @@
 
 ## 1. 网络分析的基本概念
 
-　　1.1 简而言之，**网络**（network）是由线段连接在一起的点的集合，在物理学、生物学和社会学等领域中都有广泛的应用。下面简单地介绍一些基本概念，更多内容可以参见 Brandes & Erlebach（[2005](https://link.springer.com/book/10.1007/b106453)）、Bondy & Murty（[2013](https://www.springer.com/gp/book/9781846289699)）等专著。按照离散数学中图论（graph theory）的术语，各个点被称作**顶点**（vertices）或**结点**（nodes），而连接结点的线段（或弧线）称之为**边**（edges），如图所示（引自 Newman, [2010](https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199206650.001.0001/acprof-9780199206650)）：
+　　**1.1** 简而言之，**网络**（network）是由线段连接在一起的点的集合，在物理学、生物学和社会学等领域中都有广泛的应用。下面简单地介绍一些基本概念，更多内容可以参见 Brandes & Erlebach（[2005](https://link.springer.com/book/10.1007/b106453)）、Bondy & Murty（[2013](https://www.springer.com/gp/book/9781846289699)）等专著。按照离散数学中图论（graph theory）的术语，各个点被称作**顶点**（vertices）或**结点**（nodes），而连接结点的线段（或弧线）称之为**边**（edges），如图所示（引自 Newman, [2010](https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199206650.001.0001/acprof-9780199206650)）：
 
 ![](pic/vertices-and-nodes.png)
 
-　　1.2 一个**网络图**（graph）可以用 $G=(V, E)$ 的形式来表示。图中，结点的集合记作 $V(G) = \{ v_1, v_2, v_3, \cdots, v_n \}$，边的集合记作 $E(G)=\{e_1, e_2, e_3, \cdots, e_n\}$。结点之间的关系称作关联函数，记作 $\psi_G (e)$。
+　　**1.2** 一个**网络图**（graph）可以用 $G = ( V , E )$ 的形式来表示。图中，结点的集合记作 $V(G) = \{ v_1, v_2, v_3, \cdots, v_n \}$，边的集合记作 $E(G)=\{e_1, e_2, e_3, \cdots, e_n\}$。结点之间的关系称作关联函数，记作 $\psi_G (e)$。
 
 　　网络图既可以是无方向的（undirected），也可以是有方向的（directed）。我们用 $D$ 表示有向图。
 
 　　对于两个结点 $u,v \in V$ 所组成的边 $e$，可以直接写成 $u v$。在无向图中记作 $\psi_G(e)=\{u,v\}$；在有向图中则记作 $\psi_D(e)=(u,v)$，我们称其中的 $u$ 是 $e$ 的头，$v$ 是 $e$ 的尾。
 
-　　1.3 在一个无向的网络图 $G$ 中，结点的**度**（degree）是指和结点 $v$ 相交的边的数量，记作 $d_G(v)$；结点度的最大值记作 $\Delta (G)$，最小值记作 $\delta (G)$。对有向图 $D$ 来说，还区分**入度**（indegree，即以 $v$ 为头的边的数目）和**出度**（outdegree，即以 $v$ 为头的边的数目），分别记作 $d_{D}^{-}$ 和 $d_{D}^{+}$。
+　　**1.3** 在一个无向的网络图 $G$ 中，结点的**度**（degree）是指和结点 $v$ 相交的边的数量，记作 $d_G(v)$；结点度的最大值记作 $\Delta (G)$，最小值记作 $\delta (G)$。对有向图 $D$ 来说，还区分**入度**（indegree，即以 $v$ 为头的边的数目）和**出度**（outdegree，即以 $v$ 为头的边的数目），分别记作 $d_{D}^{-}$ 和 $d_{D}^{+}$。
 
 
 
 ## 2. 网络图的实现方法
 
-　　2.1 通过计算机制作网络图的方法很多，主要有以下几类：
+　　**2.1** 通过计算机制作网络图的方法很多，主要有以下几类：
 
 1. [Python](https://www.python.org/) 语言，需要配合 [NetworkX](http://networkx.github.io/) 和 [Matplotlib](https://matplotlib.org/) 等扩展包（package）；
 2. [JavaScript](https://www.javascript.com) 脚本，较为流行的有 [Cola.js](https://ialab.it.monash.edu/webcola/)、[D3.js](https://d3js.org/)、[ECharts.js](http://echarts.baidu.com/)、[Jexf.js](https://github.com/raphv/gexf-js)、[Sigma.js](http://sigmajs.org/) 和 [Vis.js](https://visjs.org/) 等；
@@ -28,17 +28,15 @@
 
 除此之外，还有 [R](https://www.r-project.org/) 语言等很多工具或软件也可以实现类似的效果，具体情况可以参见维基百科的 [en:Social network analysis software](https://en.wikipedia.org/wiki/Social_network_analysis_software) 词条。
 
-　　由于篇幅所限，每种工具的使用用法也各不相同，因此这里不打算介绍的操作步骤[^2.1]，只是对上述这三种方式的优缺点进行简要的评述。
+　　由于篇幅所限，每种工具的使用用法也各不相同，因此这里不打算介绍的操作步骤，只是对上述这三种方式的优缺点进行简要的评述。
 
-[^2.1]: 我们已经把上述三种方式的基本操作方法上传到了 GitHub 的 [`xilian/documentation`](https://github.com/Amadeus-ji/xilian/tree/master/documentation) 目录下，可以参看。
-
-　　2.2 作为一门编程语言，Python 的使用需要安装相应的环境，而且所有设置都需要以编程命令的形式完成，因此相对而言直观性较差，安装、学习的成本较高。但也正得益于此，Python 具有更强的可定制性，加之其开源、活跃的社区，让使用者可以根据自己的实际需要灵活调整其配置，并直接编写相关程序以展开后续的数据分析工作。
+　　**2.2** 作为一门编程语言，Python 的使用需要安装相应的环境，而且所有设置都需要以编程命令的形式完成，因此相对而言直观性较差，安装、学习的成本较高。但也正得益于此，Python 具有更强的可定制性，加之其开源、活跃的社区，让使用者可以根据自己的实际需要灵活调整其配置，并直接编写相关程序以展开后续的数据分析工作。
 
 　　通过 JavaScript 实现网络图制作与分析的脚本很多，选择丰富，其使用方式也不尽相同。总体说来，使用 JavaScript 同样要安装一定编程环境，还需要一些 HTML/CSS 的基础知识。但 JavaScript 作为一门 Web 编程语言，被广泛运用于几乎所有现代的 HTML 网页上，因此虽然其数据处理能力稍弱，但由于 JavaScript 不仅可以生成图片，更能够以可交互的形式应用在网页上，不受平台和软件格式的限制，十分便于结果的查看和共享。
 
 　　网络分析软件一般有较为直观的图形化界面，可以方便地导入、管理、分析数据，相对来说最易于掌握。其中的 Gephi 更是以其跨平台、开源易用、功能强大的特点，成为最流行的网络分析软件之一；但缺点在于打开速度相对较慢，而且生成的结果必须在特定软件中查看才能有交互性。换言之，如果结点和边的数据比较繁多，静态的图片格式不能清晰地反映结点及其相互的关系。
 
-　　2.3 通过上述分析，我们认为较好的解决方案是：用 Gephi 软件将原始数据制作成网络图，再将结果生成为 `.gexf` 或 `.json` 格式（而非默认配置下直接保存得到的 `.gephi` 文件）。这样，我们可以在 JavaScript 中直接调用网络图的数据文件制作 HTML 文档，或是直接显示在 [Observable](https://observablehq.com/) 等在线平台上，以便查看网络图的结果。
+　　**2.3** 通过上述分析，我们认为较好的解决方案是：用 Gephi 软件将原始数据制作成网络图，再将结果生成为 `.gexf` 或 `.json` 格式（而非默认配置下直接保存得到的 `.gephi` 文件）。这样，我们可以在 JavaScript 中直接调用网络图的数据文件制作 HTML 文档，或是直接显示在 [Observable](https://observablehq.com/) 等在线平台上，以便查看网络图的结果。
 
 
 
