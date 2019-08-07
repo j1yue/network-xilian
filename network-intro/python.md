@@ -1,6 +1,8 @@
 # 用 Python 进行网络分析
 
-　　[Python](https://www.python.org/) 是一种计算机程序设计语言，以其简单易学、功能强大的特点，得到了十分广泛的应用。可以通过 [Matplotlib]((https://matplotlib.org/))（Hunter, [2007](https://doi.org/10.1109/MCSE.2007.55)）和 [NetworkX](https://networkx.github.io/)（Hagberg *et al.*, [2008](conference.scipy.org/proceedings/SciPy2008/paper_2/)）两个扩展包进行网络图的制作和分析。
+　　[Python](https://www.python.org/) 是一种计算机程序设计语言，以其简单易学、功能强大的特点，得到了十分广泛的应用。可以通过 [Matplotlib]((https://matplotlib.org/))（Hunter, [2007](https://doi.org/10.1109/MCSE.2007.55)）和 [NetworkX](https://networkx.github.io/)（Hagberg *et al.*, [2008](conference.scipy.org/proceedings/SciPy2008/paper_2/)）两个扩展包进行网络图的制作和分析。以下内容主要参考了廖雪峰的《[Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)》和 NetworkX 的官方文档。
+
+
 
 ## 1. 准备工作
 
@@ -70,6 +72,8 @@ $ pip install matplotlib
 
 　　**1.4** 目前为止，准备工作就已经基本完成了。下面我们开始用 Python 绘制网络图。
 
+
+
 ## 2. 开始绘图
 
 　　**2.1** 在编辑器中新建一个 `.py` 格式的文件。首先调用刚才安装的两个扩展包：
@@ -119,7 +123,7 @@ plt.show()
 
 ## 3. 结点
 
-　　结点可以逐个添加或批量添加：
+　　**3.1** 结点可以逐个添加或批量添加：
 
 ```python
 G.add_node('n') #添加结点n，或
@@ -134,6 +138,14 @@ G.remove_node('n') #删除结点n，或
 G.remove_nodes_from('u','v') #删除结点u、结点v
 ```
 
+　　**3.2** 在添加结点时，还可以增加自定义的属性，如：
+
+````python
+G.add_node(1, name='n1', weight=1)
+````
+
+
+
 
 
 ## 4. 边
@@ -145,14 +157,14 @@ G.add_edge('u','v') #添加边uv，或
 G.add_edges_from([('u','v'),('p','q')]) #添加边uv、边pq
 ```
 
-也可以先定义一条边 $u v$，再将其作为一个整体添加：
+也可以先定义一条边，再将其作为一个整体添加：
 
 ```python
 e=(u,v)
 G.add_edge(*e)
 ```
 
-删除边的命令和结点一样，只要把 `add` 替换成 `remove`：
+　　删除边的命令和结点一样，只要把 `add` 替换成 `remove`：
 
 ```python
 G.remove_edge('a','b') #删除边ab，或
@@ -161,7 +173,13 @@ G.remove_edges_from([('a','b'),('c','d')]) #删除边ab、边cd
 
 
 
-## 5. 实例
+## 5. 网络图的分析
+
+
+
+
+
+## 6. 实例
 
 　　至此为止，我们就可以得到一幅基本的网络图，更多功能可以参见[官方文档](https://networkx.github.io/documentation/stable/tutorial.html)。下面是一个简单的例子：
 
@@ -185,6 +203,5 @@ plt.show()
 
 ## 参考文献
 
-- 廖雪峰：《Python 教程》，https://www.liaoxuefeng.com/wiki/1016959663602400
 - Hagberg, Aric A., Schult, Daniel A. & Swart, Pieter J. (2008): [Exploring Network Structure, Dynamics, and Function Using NetworkX](conference.scipy.org/proceedings/SciPy2008/paper_2/). In Gäel Varoquaux, Travis Vaught, and Jarrod Millman (eds). [*Proceedings of the 7th Python in Science Conference (SciPy2008, Pasadena, CA)*](http://conference.scipy.org/proceedings/SciPy2008/index.html): 11-15.
 - Hunter, John D. (2007): [Matplotlib: A 2D Graphics Environment](https://doi.org/10.1109/MCSE.2007.55). *Computing in Science & Engineering*, 9, (3): 90-95.
