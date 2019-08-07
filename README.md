@@ -2,9 +2,21 @@
 
 2019.8
 
-[`intro.md`]((/documentation/intro.md)) 有关网络分析的基本概念和现有的主要成果。
+## `./network-intro`
 
-可以参见[这篇文档]。
 
-网络分析的具体步骤参见
+
+- [x] 网络分析的基本概念
+- [ ] 现有研究综述
+
+
+
+- [ ] 网络图的制作方法
+  - [ ] Python
+  - [ ] JavaScript
+  - [ ] GePhi
+
+
+
+
 
