@@ -1,10 +1,12 @@
 # 网络图的绘制方法
 
-　　本文主要介绍如何用计算机绘制网络图
+　　本文主要介绍用计算机绘制网络图的具体操作方法。我们[此前](../intro-and-lit-review/README.md#2-网络图的实现方法)已经比较了比较了 Python、JavaScript 脚本和网络分析软件三种不同绘制方法特点，并提出了相对简便易行的操作步骤，即用 Gephi 软件处理数据，再用各种 JavaScript 脚本完成可视化。由于篇幅所限，各种工具的操作方法不能一一展开，这里只是根据我们的需要，有侧重地加以说明。
 
 ## 1. Python
 
-　　[Python](https://www.python.org/) 是一种计算机程序设计语言，以其简单易学、功能强大的特点，得到了十分广泛的应用。可以通过 Python 的 [Matplotlib]((https://matplotlib.org/))（Hunter, [2007](https://doi.org/10.1109/MCSE.2007.55)）和 [NetworkX](https://networkx.github.io/)（Hagberg *et al.*, [2008](conference.scipy.org/proceedings/SciPy2008/paper_2/)）两个扩展包进行网络图的制作和分析。以下内容主要参考了[廖雪峰](https://www.liaoxuefeng.com/)的《[Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)》和 NetworkX 的官方文档。
+　　[Python](https://www.python.org/) 是一种计算机程序设计语言，以其简单易学、功能强大的特点，得到了十分广泛的应用。我们可以通过 Python 的 [Matplotlib]((https://matplotlib.org/))（Hunter, [2007](https://doi.org/10.1109/MCSE.2007.55)）和 [NetworkX](https://networkx.github.io/)（Hagberg *et al.*, [2008](conference.scipy.org/proceedings/SciPy2008/paper_2/)）两个扩展包进行网络图的制作和分析。
+
+　　虽然使用 Python 绘制网络图对编程知识的要求相对较高，但由于目前主要的研究成果大多都是用 Python 完成的（参见 List, [2016](https://doi.org/10.1163/2405478X-00902004); [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document) 等），而作者基本上也都在网络上公开了其数据和源代码，因此我们仍打算简单介绍 Python 使用方法，以便更好地分析、利用其他学者的研究成果。
 
 ### 1.1. 准备工作
 
@@ -29,7 +31,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 　　要退出 Python 环境，只需输入：
 
 ````python
-exit()
+>>> exit()
 ````
 
 就可以回到命令提示符了。除了这种方式之外，也可以直接打开 `Python 3.7 (64-bit).exe` 可执行文件进入 Python 环境，但退出后会直接关闭窗口。
@@ -70,7 +72,7 @@ Successfully installed decorator-4.4.0 networkx-2.
 $ pip install matplotlib
 ```
 
-等待安装完成即可。
+等待自动安装完成即可。
 
 　　目前为止，准备工作就已经基本完成了。下面我们开始用 Python 绘制网络图。
 
@@ -108,7 +110,7 @@ plt.savefig("graph.png") #保存为graph.png
 
 保存后运行这个程序（见 §1.2），稍等片刻后就可以得到一张空白的网络图了。
 
-　　**1.2.3** 下面我们开始学习如何添加结点和边。注意：有关结点和边的命令应该添加在 §2.2 和 §2.2 的内容之间，即下面例子中的 […] 位置：
+　　**1.2.3** 下面我们开始学习如何添加结点和边。注意：有关结点和边的命令应该添加在 §2.2 和 §2.2 的内容之间，即下面例子中的 `[…]` 位置：
 
 ````python
 import networkx as nx
@@ -183,7 +185,28 @@ nx.draw(G, with_labels=True)
 plt.show()
 ```
 
-　　**4.2** 类似地，我们也可以让 Python 生成
+　　**4.2** 类似地，我们也可以让 Python 按照已有的网络图数据，直接生成图片。只需要在 `[…]` 输入：
+
+````python
+read_gexf(path/to.gexf) #.gexf文件的地址
+````
+
+即可，如图所示：
+
+![](pic/python-miserable.png)
+
+附源代码：
+
+````python
+import networkx as nx
+import matplotlib.pyplot as plt
+G = nx.Graph()
+
+G=nx.read_gexf('.../les-miserables.gexf')
+
+nx.draw(G, with_labels=True)
+plt.show()
+````
 
 ## 2. Gephi
 
