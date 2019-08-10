@@ -1,12 +1,14 @@
-# 用 Python 进行网络分析
+# 网络图的绘制方法
 
-　　[Python](https://www.python.org/) 是一种计算机程序设计语言，以其简单易学、功能强大的特点，得到了十分广泛的应用。可以通过 [Matplotlib]((https://matplotlib.org/))（Hunter, [2007](https://doi.org/10.1109/MCSE.2007.55)）和 [NetworkX](https://networkx.github.io/)（Hagberg *et al.*, [2008](conference.scipy.org/proceedings/SciPy2008/paper_2/)）两个扩展包进行网络图的制作和分析。以下内容主要参考了廖雪峰的《[Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)》和 NetworkX 的官方文档。
+　　本文主要介绍如何用计算机绘制网络图
 
+## 1. Python
 
+　　[Python](https://www.python.org/) 是一种计算机程序设计语言，以其简单易学、功能强大的特点，得到了十分广泛的应用。可以通过 Python 的 [Matplotlib]((https://matplotlib.org/))（Hunter, [2007](https://doi.org/10.1109/MCSE.2007.55)）和 [NetworkX](https://networkx.github.io/)（Hagberg *et al.*, [2008](conference.scipy.org/proceedings/SciPy2008/paper_2/)）两个扩展包进行网络图的制作和分析。以下内容主要参考了[廖雪峰](https://www.liaoxuefeng.com/)的《[Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)》和 NetworkX 的官方文档。
 
-## 1. 准备工作
+### 1.1. 准备工作
 
-　　**1.1** 首先，从[官方网站](https://www.python.org/downloads/release/python-374/)上下载最新版的 Python（目前最新的版本是 3.7.4，Windows 系统建议选择下载 `Windows x86-64 executable installer`）。运行安装程序时注意确定勾选以下项目：
+　　**1.1.1** 首先，从[官方网站](https://www.python.org/downloads/release/python-374/)上下载最新版的 Python（目前最新的版本是 3.7.4，Windows 系统建议选择下载 `Windows x86-64 executable installer`）。运行安装程序时注意确定勾选以下项目：
 
 ```markdown
 [x] Add Python 3.7 to PATH
@@ -24,7 +26,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 就说明安装成功，已经可以开始使用了。（这里用 `$` 代替前面显示的路径，不需要手动输入。）
 
-要退出 Python 环境，只需输入：
+　　要退出 Python 环境，只需输入：
 
 ````python
 exit()
@@ -40,7 +42,7 @@ exit()
 
 并单击回车，就可以在下一行显示出「hello, world」的字样了。（在 Python 语言中，井号 `#` 后的内容是注释，只是为了便于我们了解代码的内容，不会被计算机识别、执行。）
 
-　　**1.2** 在命令提示符中编程，好处是每一步都能直接看到结果，但却不能保存，每次运行时都要重新输入一遍，效率比较低。因此我们还需要一个文本编辑器，常用的有 [Notepad++](https://notepad-plus-plus.org/)、[Sublime Text](www.sublimetext.com/)、[Atom](www.atom.io/) 和 [Visual Studio Code](https://code.visualstudio.com/) 等等，可以任选其一。在编辑器中完成开发后，保存为 `xxx.py` 格式，然后在命令行中输入：
+　　**1.1.2** 在命令提示符中编程，好处是每一步都能直接看到结果，但却不能保存，每次运行时都要重新输入一遍，效率比较低。因此我们还需要一个文本编辑器，常用的有 [Notepad++](https://notepad-plus-plus.org/)、[Sublime Text](www.sublimetext.com/)、[Atom](www.atom.io/) 和 [Visual Studio Code](https://code.visualstudio.com/) 等等，可以任选其一。在编辑器中完成开发后，保存为 `xxx.py` 格式，然后在命令行中输入：
 
 ```powershell
 $ python xxx.py
@@ -48,7 +50,7 @@ $ python xxx.py
 
 就可以直接打开运行。注意：不能使用 Word 或系统自带的记事本，因为这两者都不是纯文本编辑器，会加入一些其他信息导致程序运行错误。另外，如果 `.py` 文件不在命令行显示的路径（默认是 `C:\Users\用户名`）中，要先输入 `cd` 加上文件保存的路径并回车后，再输入上述命令才能运行。
 
-　　**1.3** 我们先安装 NetworkX 扩展包，用来制作和分析网络模型。在命令提示符中输入 `exit()` 暂时退出 Python 环境，然后输入：
+　　**1.1.3** 我们先安装 NetworkX 扩展包，用来制作和分析网络模型。在命令提示符中输入 `exit()` 暂时退出 Python 环境，然后输入：
 
 ```powershell
 $ pip install networkx
@@ -62,7 +64,7 @@ Successfully installed decorator-4.4.0 networkx-2.
 
 就说明已经安装成功了。
 
-　　然后，用同样的方式安装数据可视化工具 [Matplotlib](https://matplotlib.org/)，将网络分析的结果可视化。在命令提示符中输入：
+　　然后，用同样的方式安装用于数据可视化的 Matplotlib 扩展包，以将网络分析生成为图片。在命令提示符中输入：
 
 ```powershell
 $ pip install matplotlib
@@ -70,13 +72,11 @@ $ pip install matplotlib
 
 等待安装完成即可。
 
-　　**1.4** 目前为止，准备工作就已经基本完成了。下面我们开始用 Python 绘制网络图。
+　　目前为止，准备工作就已经基本完成了。下面我们开始用 Python 绘制网络图。
 
+### 1.2. 开始绘图
 
-
-## 2. 开始绘图
-
-　　**2.1** 在编辑器中新建一个 `.py` 格式的文件。首先调用刚才安装的两个扩展包：
+　　**1.2.1** 在编辑器中新建一个 `.py` 格式的文件。首先调用刚才安装的两个扩展包：
 
 ```python
 import networkx as nx
@@ -93,7 +93,7 @@ G = nx.MultiDigraph() #多重有向图，或
 G.clear() #清空图
 ```
 
-　　**2.2** 接下来，输入：
+　　**1.2.2** 接下来，输入：
 
 ```python
 nx.draw(G)
@@ -108,7 +108,7 @@ plt.savefig("graph.png") #保存为graph.png
 
 保存后运行这个程序（见 §1.2），稍等片刻后就可以得到一张空白的网络图了。
 
-　　**2.3** 下面我们开始学习如何添加结点和边。注意：有关结点和边的命令应该添加在 §2.2 和 §2.2 的内容之间，即下面例子中的 […] 位置：
+　　**1.2.3** 下面我们开始学习如何添加结点和边。注意：有关结点和边的命令应该添加在 §2.2 和 §2.2 的内容之间，即下面例子中的 […] 位置：
 
 ````python
 import networkx as nx
@@ -119,11 +119,9 @@ nx.draw(G)
 plt.show()
 ````
 
+### 1.3. 结点和边的添加与删除
 
-
-## 3. 结点
-
-　　**3.1** 结点可以逐个添加或批量添加：
+　　**1.3.1** 结点可以逐个添加或批量添加：
 
 ```python
 G.add_node('n') #添加结点n，或
@@ -138,19 +136,13 @@ G.remove_node('n') #删除结点n，或
 G.remove_nodes_from('u','v') #删除结点u、结点v
 ```
 
-　　**3.2** 在添加结点时，还可以增加自定义的属性，如：
+　　**1.3.2** 在添加结点时，还可以增加自定义的属性，如：
 
 ````python
 G.add_node(1, name='n1', weight=1)
 ````
 
-
-
-
-
-## 4. 边
-
-　　边的添加有两种方式，既可以像结点一样直接添加：
+　　**1.3.3** 边的添加有两种方式，既可以像结点一样直接添加：
 
 ```python
 G.add_edge('u','v') #添加边uv，或
@@ -171,17 +163,9 @@ G.remove_edge('a','b') #删除边ab，或
 G.remove_edges_from([('a','b'),('c','d')]) #删除边ab、边cd
 ```
 
+### 1.4. 实例
 
-
-## 5. 网络图的分析
-
-
-
-
-
-## 6. 实例
-
-　　至此为止，我们就可以得到一幅基本的网络图，更多功能可以参见[官方文档](https://networkx.github.io/documentation/stable/tutorial.html)。下面是一个简单的例子：
+　　**1.4.1** 至此为止，我们就可以得到一幅基本的网络图，更多功能可以参见[官方文档](https://networkx.github.io/documentation/stable/tutorial.html)。下面是一个简单的例子：
 
 ![](pic/python-example-1.png)
 
@@ -198,6 +182,12 @@ G.add_edges_from([(1, 2), (1, 3), (2, 3)])
 nx.draw(G, with_labels=True)
 plt.show()
 ```
+
+　　**4.2** 类似地，我们也可以让 Python 生成
+
+## 2. Gephi
+
+　　[Gephi](https://gephi.org/) 是一款开源、免费、跨平台的网络分析软件。和 Python 相比，Gephi 有简单直观的图形界面，非常便于我们学习和使用。下面简要介绍其操作方法。
 
 
 
