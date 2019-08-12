@@ -23,7 +23,7 @@
 　　**2.1** 通过计算机制作网络图的方法很多，主要有以下几类：
 
 1. [Python](https://www.python.org/) 语言，需要配合 [NetworkX](http://networkx.github.io/) 和 [Matplotlib](https://matplotlib.org/) 等扩展包（package）；
-2. [JavaScript](https://www.javascript.com) 脚本，较为流行的有 [Cola.js](https://ialab.it.monash.edu/webcola/)、[D3.js](https://d3js.org/)、[ECharts.js](http://echarts.baidu.com/)、[Jexf.js](https://github.com/raphv/gexf-js)、[Sigma.js](http://sigmajs.org/) 和 [Vis.js](https://visjs.org/) 等；
+2. [JavaScript](https://www.javascript.com) 脚本，较为流行的有 [Cola.js](https://ialab.it.monash.edu/webcola/)、[D3.js](https://d3js.org/)、[ECharts.js](http://echarts.baidu.com/)、[Gexf.js](https://github.com/raphv/gexf-js)、[Sigma.js](http://sigmajs.org/) 和 [Vis.js](https://visjs.org/) 等；
 3. 其他网络分析及其可视化软件，如 [AllegroGraph](https://allegrograph.com/)、[Gephi](https://gephi.org/) 、[NetMiner](http://www.netminer.com/main/main-read.do) 等。
 
 除此之外，还有 [R](https://www.r-project.org/) 语言等很多工具或软件也可以实现类似的效果，具体情况可以参见维基百科的 [en:Social network analysis software](https://en.wikipedia.org/wiki/Social_network_analysis_software) 词条。
@@ -54,7 +54,28 @@
 
 　　游函（List, [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document)）利用网络分析方法对《广韵》中反切上字的分组现象作了考察。
 
-　　胡佳佳（[2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)）从教学的角度，介绍了网络分析方法在系联反切上字和下字时的作用。
+　　**3.2.2** 胡佳佳（[2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)）从实际教学的角度出发，介绍了网络分析方法和 Gephi 软件在系联反切上字和下字时的作用。
+
+　　胡文系联反切下字的方法是，先找出一个韵内所有反切下字（我们记作 $V_1$），再查出这些字所在小韵的反切下字（我们记作 $V_2$）。显然 $V_2 \in V_1$，又因为「反切下字之间的韵类等价关系是双向的，所以网络图中的边是无方向的」，就可以建立关联函数 $\psi_G(e)=\{V_1, V_2\}$。以五支韵为例，其结果如下所示：
+
+<iframe id="anychart-iframe-embed-samples-network-graph" src="about:blank" frameBorder="0" class="anychart-embed anychart-embed-samples-network-graph"></iframe>
+<script type="text/javascript">(function(){
+function ac_add_to_head(el){
+	var head = document.getElementsByTagName('head')[0];
+	head.insertBefore(el,head.firstChild);
+}
+function ac_add_style(css){
+	var ac_style = document.createElement('style');
+	if (ac_style.styleSheet) ac_style.styleSheet.cssText = css;
+	else ac_style.appendChild(document.createTextNode(css));
+	ac_add_to_head(ac_style);
+}
+ac_add_style(".anychart-embed-samples-network-graph{width:600px;height:450px;}");
+var doc = document.getElementById('anychart-iframe-embed-samples-network-graph').contentWindow.document;
+doc.open();
+doc.write("<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\" \/><meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\" \/><meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" \/><title>Network Graph<\/title><link href=\"https:\/\/playground.anychart.com\/chartopedia\/samples\/Network_Graph\/iframe\" rel=\"canonical\" \/><meta content=\"AnyChart - JavaScript Charts designed to be embedded and integrated\" name=\"description\" \/><!--[if lt IE 9]>\n<script src=\"https:\/\/oss.maxcdn.com\/html5shiv\/3.7.3\/html5shiv.min.js\"><\/script>\n<script src=\"https:\/\/oss.maxcdn.com\/respond\/1.4.2\/respond.min.js\"><\/script>\n<![endif]--><link href=\"https:\/\/cdn.anychart.com\/releases\/v8\/css\/anychart-ui.min.css\" rel=\"stylesheet\" type=\"text\/css\" \/><link href=\"https:\/\/cdn.anychart.com\/releases\/v8\/fonts\/css\/anychart-font.min.css\" rel=\"stylesheet\" type=\"text\/css\" \/><style>html, body, #container {\n    width: 100%;\n    height: 100%;\n    margin: 0;\n    padding: 0;\n}<\/style><\/head><body><div id=\"container\"><\/div><script src=\"https:\/\/cdn.anychart.com\/releases\/v8\/js\/anychart-core.min.js\"><\/script><script src=\"https:\/\/cdn.anychart.com\/releases\/v8\/js\/anychart-graph.min.js\"><\/script><script src=\"https:\/\/cdn.anychart.com\/releases\/v8\/js\/anychart-exports.min.js\"><\/script><script src=\"https:\/\/cdn.anychart.com\/releases\/v8\/js\/anychart-ui.min.js\"><\/script><script type=\"text\/javascript\">    anychart.onDocumentReady(function() {\n\n  \/\/ create data\n  var data= {\n    \"nodes\":[\n      {id:'Kate Austin', height: '30', fill: '#64b5f6'},\n      {id:'Reece Gray'},\n      {id:'Darren Burch'},\n      {id:'Leslie Bailey'},\n      {id:'Nova Fisher'},\n\n      {id:'Jack Austin', height: '30', fill: '#64b5f6'},\n      {id:'Jamie Montoya'},\n      {id:'Sawyer Mack'},\n      {id:'Hugo Love'},\n\n      {id:'Sophie Lilly', height: '30', fill: '#64b5f6'},\n      {id:'Ivy Mcintyre'},\n      {id:'Evie West'},\n\n      {id: 'Elsie Mcbride', height: '20', fill: '#64b5f6'},\n      {id:'Jude Mcbride'},\n    ],\n\n    \"edges\":[\n      {from: 'Kate Austin', to:'Reece Gray'},\n      {from: 'Kate Austin', to:'Darren Burch'},\n      {from: 'Kate Austin', to:'Leslie Bailey'},\n      {from: 'Kate Austin', to:'Nova Fisher'},\n      {from: 'Kate Austin', to:'Jack Austin'},\n\n      {from: 'Jack Austin', to:'Jamie Montoya'},\n      {from: 'Jack Austin', to:'Sawyer Mack'},\n      {from: 'Jack Austin', to:'Hugo Love'},\n      {from: 'Jack Austin', to:'Sophie Lilly'},\n      {from: 'Jack Austin', to:'Elsie Mcbride'},\n\n      {from: 'Elsie Mcbride', to:'Jude Mcbride'},\n\n      {from: 'Sophie Lilly', to:'Ivy Mcintyre'},\n      {from: 'Sophie Lilly', to:'Evie West'},\n    ]}\n\n  var chart = anychart.graph(data);\n\n  chart.title(\"Relationship Graph\");\n\n  \/\/ configure nodes\n  chart.nodes().labels().enabled(true);\n  chart.nodes().labels().fontSize(12);\n\n  chart.nodes().normal().fill(\"white\");\n  chart.nodes().normal().stroke(\"1 black\");\n  chart.nodes().shape('circle');\n\n  chart.nodes().hovered().fill(\"white\");\n  chart.nodes().hovered().stroke(\"2 black\");\n  chart.nodes().hovered().shape('circle');\n\n  chart.layout().type('force');\n\n  \/\/ initiate drawing the chart\n  chart.container('container').draw();\n});<\/script><\/body><\/html>");
+doc.close();
+})();</script>
 
 
 
