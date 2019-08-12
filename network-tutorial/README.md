@@ -322,7 +322,6 @@ Source,Target,Type,Id,Label,timeset,Weight
         {"id": 1, "label": "a", "group": 1},
         {"id": 2, "label": "b", "group": 1},
         {"id": 3, "label": "c", "group": 2},
-        ...
     ],
         
     "links": [
@@ -371,7 +370,118 @@ GexfJS.setParams({
 
 ### 3.4 其他 JavaScript 脚本
 
-　　除了上述的 Gexf.js 和 Sigma.js 之外，还有很多 JavaScript 脚本都可以完成网络图的可视化。由于具体的代码设置不尽相同，我们这里仅以非常流行的数据可视化脚本 [D3.js](https://d3js.org/) 为例进行演示，其代码可以参见 [Observable](https://observablehq.com/@d3/force-directed-graph) 平台。
+　　除了上述的 Gexf.js 和 Sigma.js 之外，还有很多 JavaScript 脚本都可以完成网络图的可视化。由于具体的代码设置不尽相同，我们这里仅以非常流行的数据可视化脚本 [D3.js](https://d3js.org/) 为例进行演示。为了方便起见，我们可以用 JavaScript 的在线展示平台 [Observable](https://observablehq.com/)，以省去配置 npm 等操作环境的繁琐。
 
+　　在 Observable 上新建一个文档，下面我们用一个代码块表示 Observable 中的一个「cell」，在第一个 cell 中输入以下代码，通过 npm 的方式引入 d3.js 插件：
 
+````js
+d3 = require("d3@5")
+````
 
+下面在双引号内输入 `.json` 文件的地址，以引入图的数据：
+
+````js
+data = d3.json("<!--文件地址-->") 
+````
+
+在 HTML/JavaScript 语言中，`<!--` 和 `-->` 之间的内容是注释信息，不会被计算机识别、执行。注意：用 Gephi 插件自动导出的文件中，边的名称是 `"edges"`，在这里要改成 `"links"` 才能被 D3.js 识别。设置网络图插件的高度，单位是 px（宽度默认是整个页面，可以不必设置）：
+
+````js
+height = 600
+````
+
+然后配置网络图的属性：
+
+````js
+color = {
+	const scale = d3.scaleOrdinal(d3.schemeCategory10);
+	return d => scale(d.group);
+}
+````
+
+````js
+drag = simulation => {
+  
+  function dragstarted(d) {
+    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+  
+  function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+  }
+  
+  function dragended(d) {
+    if (!d3.event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+  
+  return d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended);
+}
+````
+
+最后，输入：
+
+````js
+chart = {
+  const links = data.links.map(d => Object.create(d));
+  const nodes = data.nodes.map(d => Object.create(d));
+
+  const simulation = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).id(d => d.id))
+      .force("charge", d3.forceManyBody())
+      .force("center", d3.forceCenter(width / 2, height / 2));
+
+  const svg = d3.create("svg")
+      .attr("viewBox", [0, 0, width, height]);
+
+  const link = svg.append("g")
+      .attr("stroke", "#999")
+      .attr("stroke-opacity", 0.6)
+    .selectAll("line")
+    .data(links)
+    .join("line")
+      .attr("stroke-width", d => Math.sqrt(d.value));
+
+  const node = svg.append("g")
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 1.5)
+    .selectAll("circle")
+    .data(nodes)
+    .join("circle")
+      .attr("r", 5)
+      .attr("fill", color)
+      .call(drag(simulation));
+
+  node.append("title")
+      .text(d => d.id);
+
+  simulation.on("tick", () => {
+    link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+    node
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+  });
+
+  invalidation.then(() => simulation.stop());
+
+  return svg.node();
+}
+````
+
+使用快捷键 `Shift + Enter` 运行即可，效果如图所示：
+
+![](pic/d3js-demo.png)
+
+其实，在同一个页面中，cell 的顺序是可以改变的。因此，我们也可以把最后的 `chart = {}` 代码块移至最前，再单击左侧的大头针按钮取消各 cell 代码的固定显示，使整个页面更加简洁。
