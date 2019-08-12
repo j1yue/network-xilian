@@ -12,7 +12,7 @@
 
 　　网络图既可以是无方向的（undirected），也可以是有方向的（directed）。我们用 $D$ 表示有向图。
 
-　　对于两个结点 $u,v \in V$ 所组成的边 $e$，可以直接写成 $u v$。在无向图中记作 $\psi_G(e)=\{u,v\}$；在有向图中则记作 $\psi_D(e)=(u,v)$，我们称其中的 $u$ 是 $e$ 的源（或头），$v$ 是 $e$ 的目标（或尾）。
+　　对于两个结点 $u,v \in V$ 所组成的边 $e$，可以直接写成 $u v$。在无向图中记作 $\psi_G(e)=\{u,v\}$；在有向图中则记作 $\psi_D(e)=(u,v)$，我们称其中的 $u$ 是 $e$ 的**源结点**（或头），$v$ 是 $e$ 的**目标结点**（或尾）。
 
 　　**1.3** 在一个无向的网络图 $G$ 中，结点的**度**（degree）是指和结点 $v$ 相交的边的数量，记作 $d_G(v)$；结点度的最大值记作 $\Delta (G)$，最小值记作 $\delta (G)$。对有向图 $D$ 来说，还区分**入度**（indegree，即以 $v$ 为头的边的数目）和**出度**（outdegree，即以 $v$ 为头的边的数目），分别记作 $d_{D}^{-}$ 和 $d_{D}^{+}$。
 
@@ -23,7 +23,7 @@
 　　**2.1** 通过计算机制作网络图的方法很多，主要有以下几类：
 
 1. [Python](https://www.python.org/) 语言，需要配合 [NetworkX](http://networkx.github.io/) 和 [Matplotlib](https://matplotlib.org/) 等扩展包（package）；
-2. [JavaScript](https://www.javascript.com) 脚本，较为流行的有 [Cola.js](https://ialab.it.monash.edu/webcola/)、[D3.js](https://d3js.org/)、[ECharts.js](http://echarts.baidu.com/)、[Gexf.js](https://github.com/raphv/gexf-js)、[Sigma.js](http://sigmajs.org/) 和 [Vis.js](https://visjs.org/) 等；
+2. [JavaScript](https://www.javascript.com) 脚本，比如 [AnyChart](https://www.anychart.com/chartopedia/chart-type/network-graph/)、[Cola.js](https://ialab.it.monash.edu/webcola/)、[D3.js](https://d3js.org/)、[ECharts.js](http://echarts.baidu.com/)、[Gexf.js](https://github.com/raphv/gexf-js)、[Sigma.js](http://sigmajs.org/) 和 [Vis.js](https://visjs.org/) 等；
 3. 其他网络分析及其可视化软件，如 [AllegroGraph](https://allegrograph.com/)、[Gephi](https://gephi.org/) 、[NetMiner](http://www.netminer.com/main/main-read.do) 等。
 
 除此之外，还有 [R](https://www.r-project.org/) 语言等很多工具或软件也可以实现类似的效果，具体情况可以参见维基百科的 [en:Social network analysis software](https://en.wikipedia.org/wiki/Social_network_analysis_software) 词条。
@@ -34,7 +34,7 @@
 
 　　通过 JavaScript 实现网络图制作与分析的脚本很多，选择丰富，其使用方式也不尽相同。总体说来，使用 JavaScript 同样要安装一定编程环境，还需要一些 HTML/CSS 的基础知识。但 JavaScript 作为一门 Web 编程语言，被广泛运用于几乎所有现代的 HTML 网页上，因此虽然其数据处理能力稍弱，但由于 JavaScript 不仅可以生成图片，更能够以可交互的形式应用在网页上，不受平台和软件格式的限制，十分便于结果的查看和共享。
 
-　　网络分析软件一般有较为直观的图形化界面，可以方便地导入、管理、分析数据，相对来说最易于掌握。其中的 Gephi 更是以其跨平台、开源易用、功能强大的特点，成为最流行的网络分析软件之一；但缺点在于打开速度相对较慢，而且生成的结果必须在特定软件中查看才能有交互性。换言之，如果结点和边的数据比较繁多，静态的图片格式不能清晰地反映结点及其相互的关系。
+　　网络分析软件一般有较为直观的图形化界面，可以方便地导入、管理、分析数据，相对来说最易于掌握。其中的 Gephi 更是以其跨平台、开源易用、功能强大的特点，成为最流行的网络分析软件之一；但缺点在于打开速度相对较慢，而且生成的结果必须在专门软件中查看才能有交互性。也就是说，在查看和共享网络图的时候，如果没有安装相应的软件，就只能输出为静态的图片格式，而这在结点数据较多时显然不能清晰地反映其间的关系。
 
 　　**2.3** 通过上述分析，我们认为较好的解决方案是：用 Gephi 软件将原始数据制作成网络图，再将结果生成为 `.gexf` 或 `.json` 格式（而非默认配置下直接保存得到的 `.gephi` 文件）。这样，我们可以在 JavaScript 中直接调用网络图的数据文件制作 HTML 文档，或是直接显示在 [Observable](https://observablehq.com/) 等在线平台上，以便查看网络图的结果。
 
@@ -54,28 +54,17 @@
 
 　　游函（List, [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document)）利用网络分析方法对《广韵》中反切上字的分组现象作了考察。
 
-　　**3.2.2** 胡佳佳（[2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)）从实际教学的角度出发，介绍了网络分析方法和 Gephi 软件在系联反切上字和下字时的作用。
+　　**3.2.2** 胡佳佳（[2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)）从实际教学的角度出发，介绍了网络分析方法在系联反切上字和下字时的作用。
 
-　　胡文系联反切下字的方法是，先找出一个韵内所有反切下字（我们记作 $V_1$），再查出这些字所在小韵的反切下字（我们记作 $V_2$）。显然 $V_2 \in V_1$，又因为「反切下字之间的韵类等价关系是双向的，所以网络图中的边是无方向的」，就可以建立关联函数 $\psi_G(e)=\{V_1, V_2\}$。以五支韵为例，其结果如下所示：
+　　在系联反切下字时，先找出一个韵内所有反切下字（我们记作 $V_1$），再查出这些字所在小韵的反切下字（我们记作 $V_2$）。显然 $V_2 \in V_1$，又因为「反切下字之间的韵类等价关系是双向的，所以网络图中的边是无方向的」，就可以建立关联函数 $\psi_G(e)=\{V_1, V_2\}$。以五支韵为例，在 Gephi 软件中生成结果如下图所示（引自胡佳佳, [2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq): 159）：
 
-<iframe id="anychart-iframe-embed-samples-network-graph" src="about:blank" frameBorder="0" class="anychart-embed anychart-embed-samples-network-graph"></iframe>
-<script type="text/javascript">(function(){
-function ac_add_to_head(el){
-	var head = document.getElementsByTagName('head')[0];
-	head.insertBefore(el,head.firstChild);
-}
-function ac_add_style(css){
-	var ac_style = document.createElement('style');
-	if (ac_style.styleSheet) ac_style.styleSheet.cssText = css;
-	else ac_style.appendChild(document.createTextNode(css));
-	ac_add_to_head(ac_style);
-}
-ac_add_style(".anychart-embed-samples-network-graph{width:600px;height:450px;}");
-var doc = document.getElementById('anychart-iframe-embed-samples-network-graph').contentWindow.document;
-doc.open();
-doc.write("<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\" \/><meta content=\"IE=edge\" http-equiv=\"X-UA-Compatible\" \/><meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" \/><title>Network Graph<\/title><link href=\"https:\/\/playground.anychart.com\/chartopedia\/samples\/Network_Graph\/iframe\" rel=\"canonical\" \/><meta content=\"AnyChart - JavaScript Charts designed to be embedded and integrated\" name=\"description\" \/><!--[if lt IE 9]>\n<script src=\"https:\/\/oss.maxcdn.com\/html5shiv\/3.7.3\/html5shiv.min.js\"><\/script>\n<script src=\"https:\/\/oss.maxcdn.com\/respond\/1.4.2\/respond.min.js\"><\/script>\n<![endif]--><link href=\"https:\/\/cdn.anychart.com\/releases\/v8\/css\/anychart-ui.min.css\" rel=\"stylesheet\" type=\"text\/css\" \/><link href=\"https:\/\/cdn.anychart.com\/releases\/v8\/fonts\/css\/anychart-font.min.css\" rel=\"stylesheet\" type=\"text\/css\" \/><style>html, body, #container {\n    width: 100%;\n    height: 100%;\n    margin: 0;\n    padding: 0;\n}<\/style><\/head><body><div id=\"container\"><\/div><script src=\"https:\/\/cdn.anychart.com\/releases\/v8\/js\/anychart-core.min.js\"><\/script><script src=\"https:\/\/cdn.anychart.com\/releases\/v8\/js\/anychart-graph.min.js\"><\/script><script src=\"https:\/\/cdn.anychart.com\/releases\/v8\/js\/anychart-exports.min.js\"><\/script><script src=\"https:\/\/cdn.anychart.com\/releases\/v8\/js\/anychart-ui.min.js\"><\/script><script type=\"text\/javascript\">    anychart.onDocumentReady(function() {\n\n  \/\/ create data\n  var data= {\n    \"nodes\":[\n      {id:'Kate Austin', height: '30', fill: '#64b5f6'},\n      {id:'Reece Gray'},\n      {id:'Darren Burch'},\n      {id:'Leslie Bailey'},\n      {id:'Nova Fisher'},\n\n      {id:'Jack Austin', height: '30', fill: '#64b5f6'},\n      {id:'Jamie Montoya'},\n      {id:'Sawyer Mack'},\n      {id:'Hugo Love'},\n\n      {id:'Sophie Lilly', height: '30', fill: '#64b5f6'},\n      {id:'Ivy Mcintyre'},\n      {id:'Evie West'},\n\n      {id: 'Elsie Mcbride', height: '20', fill: '#64b5f6'},\n      {id:'Jude Mcbride'},\n    ],\n\n    \"edges\":[\n      {from: 'Kate Austin', to:'Reece Gray'},\n      {from: 'Kate Austin', to:'Darren Burch'},\n      {from: 'Kate Austin', to:'Leslie Bailey'},\n      {from: 'Kate Austin', to:'Nova Fisher'},\n      {from: 'Kate Austin', to:'Jack Austin'},\n\n      {from: 'Jack Austin', to:'Jamie Montoya'},\n      {from: 'Jack Austin', to:'Sawyer Mack'},\n      {from: 'Jack Austin', to:'Hugo Love'},\n      {from: 'Jack Austin', to:'Sophie Lilly'},\n      {from: 'Jack Austin', to:'Elsie Mcbride'},\n\n      {from: 'Elsie Mcbride', to:'Jude Mcbride'},\n\n      {from: 'Sophie Lilly', to:'Ivy Mcintyre'},\n      {from: 'Sophie Lilly', to:'Evie West'},\n    ]}\n\n  var chart = anychart.graph(data);\n\n  chart.title(\"Relationship Graph\");\n\n  \/\/ configure nodes\n  chart.nodes().labels().enabled(true);\n  chart.nodes().labels().fontSize(12);\n\n  chart.nodes().normal().fill(\"white\");\n  chart.nodes().normal().stroke(\"1 black\");\n  chart.nodes().shape('circle');\n\n  chart.nodes().hovered().fill(\"white\");\n  chart.nodes().hovered().stroke(\"2 black\");\n  chart.nodes().hovered().shape('circle');\n\n  chart.layout().type('force');\n\n  \/\/ initiate drawing the chart\n  chart.container('container').draw();\n});<\/script><\/body><\/html>");
-doc.close();
-})();</script>
+![](pic/hu-fig2.png)
+
+但我们认为这种方法有以下两点不足。其一，必须单独分析「上字同类者，下字必不同类」的情况，对分析条例的体现并不直观；其二，只对反切下字进行了系联，不便于像传统的以小韵为单位的系联一样，展现各个小韵之间同用、互用、递用的关系。
+
+　　系联反切上字的方法与之基本相同，先列出《广韵》中全部反切上字（我们记作 $U_1$），再查出这些字所在小韵的反切上字（我们记作 $U_2$）。类似地，我们也可以得到关联函数 $\psi_H(e)=\{U_1, U_2\}$，生成的网络图如下所示（引自胡佳佳, [2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq): 162）：
+
+![](pic/hu-fig5.png)
 
 
 
