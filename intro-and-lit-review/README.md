@@ -54,9 +54,9 @@
 
 　　游函（List, [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document)）利用网络分析方法对《广韵》中反切上字的分组现象作了考察。
 
-　　**3.2.2** 胡佳佳（[2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)）从实际教学的角度出发，介绍了网络分析方法在系联反切上字和下字时的作用。
+　　**3.2.2** 胡佳佳（[2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)）介绍了网络分析方法在实际教学中的作用。下面分别介绍其系联反切上字和下字的方法。
 
-　　在系联反切下字时，先找出一个韵内所有反切下字（我们记作 $V_1$），再查出这些字所在小韵的反切下字（我们记作 $V_2$）。显然 $V_2 \in V_1$，又因为「反切下字之间的韵类等价关系是双向的，所以网络图中的边是无方向的」，就可以建立关联函数 $\psi_G(e)=\{V_1, V_2\}$。以五支韵为例，在 Gephi 软件中生成结果如下图所示（引自胡佳佳, [2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq): 159）：
+　　在系联反切下字时，先找出一个韵内所有反切下字（我们记作 $V_1$），再查出这些字所在小韵的反切下字（我们记作 $V_2$），显然 $V_2 \in V_1$，又因为「反切下字之间的韵类等价关系是双向的，所以网络图中的边是无方向的」，就可以建立关联函数 $\psi_G(e)=\{V_1, V_2\}$。以五支韵为例，在 Gephi 软件中生成结果如下图所示（引自胡佳佳, [2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq): 159）：
 
 ![](pic/hu-fig2.png)
 
