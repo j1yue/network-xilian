@@ -1,12 +1,33 @@
 # 网络图的绘制方法
 
-　　本文主要介绍用计算机绘制网络图的具体操作方法。我们[此前](../intro-and-lit-review/README.md#2-网络图的实现方法)已经比较了比较了 Python、JavaScript 脚本和网络分析软件三种不同绘制方法特点，并提出了相对简便易行的操作步骤，即用 Gephi 软件处理数据，再用各种 JavaScript 脚本完成可视化。由于篇幅所限，各种工具的操作方法不能一一展开，这里只是根据我们的需要，有侧重地加以说明。
+　　本文主要介绍用计算机绘制网络图的具体操作方法。我们[此前](../intro-and-lit-review/README.md#2-网络图的实现方法)已经比较了比较了 Python、JavaScript 脚本和网络分析软件三种不同绘制方法特点，并提出了相对简便易行的操作步骤，即：用 Gephi 软件处理数据，再用各种 JavaScript 脚本完成可视化。由于篇幅所限，各种工具的操作方法不能一一展开，这里只是根据我们的需要，有侧重地加以说明。
+
+<!-- TOC -->
+
+- [网络图的绘制方法](#%e7%bd%91%e7%bb%9c%e5%9b%be%e7%9a%84%e7%bb%98%e5%88%b6%e6%96%b9%e6%b3%95)
+  - [1. Python](#1-python)
+    - [1.1 准备工作](#11-%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c)
+    - [1.2. 开始绘图](#12-%e5%bc%80%e5%a7%8b%e7%bb%98%e5%9b%be)
+    - [1.3. 结点和边的编辑](#13-%e7%bb%93%e7%82%b9%e5%92%8c%e8%be%b9%e7%9a%84%e7%bc%96%e8%be%91)
+    - [1.4. 实例](#14-%e5%ae%9e%e4%be%8b)
+  - [2. Gephi](#2-gephi)
+    - [2.1 结点和边的编辑](#21-%e7%bb%93%e7%82%b9%e5%92%8c%e8%be%b9%e7%9a%84%e7%bc%96%e8%be%91)
+    - [2.2 批量导入数据](#22-%e6%89%b9%e9%87%8f%e5%af%bc%e5%85%a5%e6%95%b0%e6%8d%ae)
+    - [2.3 网络图的外观](#23-%e7%bd%91%e7%bb%9c%e5%9b%be%e7%9a%84%e5%a4%96%e8%a7%82)
+    - [2.4 网络图的保存](#24-%e7%bd%91%e7%bb%9c%e5%9b%be%e7%9a%84%e4%bf%9d%e5%ad%98)
+  - [3. JavaScript](#3-javascript)
+    - [3.1 `.json` 数据的编辑](#31-json-%e6%95%b0%e6%8d%ae%e7%9a%84%e7%bc%96%e8%be%91)
+    - [3.2 Gexf.js](#32-gexfjs)
+    - [3.3 Sigma.js](#33-sigmajs)
+    - [3.4 其他 JavaScript 脚本](#34-%e5%85%b6%e4%bb%96-javascript-%e8%84%9a%e6%9c%ac)
+
+<!-- /TOC -->
 
 ## 1. Python
 
 　　[Python](https://www.python.org/) 是一种计算机程序设计语言，以其简单易学、功能强大的特点，得到了十分广泛的应用。我们可以通过 Python 的 [Matplotlib]((https://matplotlib.org/))（Hunter, [2007](https://doi.org/10.1109/MCSE.2007.55)）和 [NetworkX](https://networkx.github.io/)（Hagberg *et al.*, [2008](conference.scipy.org/proceedings/SciPy2008/paper_2/)）两个扩展包进行网络图的制作和分析。
 
-　　虽然使用 Python 绘制网络图对编程知识的要求相对较高，但由于目前主要的研究成果大多都是用 Python 完成的（参见 List, [2016](https://doi.org/10.1163/2405478X-00902004); [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document) 等），而作者基本上也都在网络上公开了其数据和源代码，因此我们仍打算简单介绍 Python 使用方法，以便更好地分析、利用其他学者的研究成果。
+　　虽然使用 Python 绘制网络图对编程知识的要求相对较高，但由于目前主要的研究成果大多都是用 Python 完成的（参见 List, [2016](https://doi.org/10.1163/2405478X-00902004); [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document) 等），而作者基本上也都在网络上公开了其数据和源代码，因此我们简单介绍 Python 的使用方法，以便更好地分析、利用其他学者的研究成果。
 
 ### 1.1 准备工作
 
