@@ -284,7 +284,7 @@ Source,Target,Type,Id,Label,timeset,Weight
 
 ### 2.3 网络图的外观
 
-　　为了便于我们查看网络图的信息，还可以在 Gephi 中对图的外观进行设置。这一步并不是必须的，因为我们可以直接用 JavaScript 脚本获得更好的查看效果（见 [§3](#3-JavaScript)）。
+　　为了便于我们查看网络图的信息，还可以在 Gephi 中对图的外观进行设置。
 
 　　**2.3.1** 在「概览」界面中，单击最下方黑色的字母 `T` 以显示结点的标签（label），其大小、字体和颜色可以在右侧调节，效果如图所示：
 
@@ -296,15 +296,82 @@ Source,Target,Type,Id,Label,timeset,Weight
 
 ![](pic/gephi-appearance.png)
 
-　　**2.3.3** 除此之外，还可以在左下角的「布局」中进行更细致的调整，在此不再赘述。比如，`Fruchterman Reingold`的效果如图所示：
+　　**2.3.3** 除此之外，还可以在左下角的「布局」中进行更细致的调整，在此不再赘述。比如，`Fruchterman Reingold` 的效果如图所示：
 
 ![](pic/gephi-reingold.png)
 
+### 2.4 网络图的保存
+
+　　我们可以直接将网络图直接保存为 `.gephi` 格式。这种格式可以完整地保留数据和设置的各项内容，但只能在 Gephi 软件中打开。
+
+　　如果要生成图片，有两种方式。其一是直接截屏，或者单击下方工具栏的照相机图标截屏。这种方式可以忠实地展现屏幕上的网络图，但图片的质量相对较低。另一种方法则是在菜单栏中选择 `文件(F) -> 输出 -> SVG/PDF/PNG文件`，然后在弹出的窗口中将「文件类型」设置为 `.png` 即可。
+
+　　如果要生成 `.gexf` 文件，在菜单栏中选择 `文件(F) -> 输出 -> 图文件...`，将保存的文件类型设置为 `.gexf` 即可。要生成 `.json` 文件，则需在菜单栏中选择 `工具(T) -> 插件(G) -> 可用插件 -> JSON Exporter`，安装完成后，就可以按上述方法导出了。
+
 ## 3. JavaScript
 
+　　JavaScript 是世界上最流行的脚本语言，几乎所有网页的交互逻辑都是由 JavaScript 驱动的，其优势正在与能够跨平台、跨浏览器地驱动网页，和用户交互。因此，我们正可以利用 JavaScript 的这一优势，在 HTML 页面中显示网络图文件；此外，JavaScript 脚本大多都有较为精致的设计，使我们不必纠结于 Gephi 软件中参数的调整，极大地方便了我们网络图的输出及其结果的查看。
+
+### 3.1 `.json` 数据的编辑
+
+　　JSON 的全称是 JavaScript Object Notation，是一种轻量级的数据交换格式。绘制网络图的 JavaScript 脚本，其具体的代码各不相同，但一般都可以直接导入 `.json` 格式的图文件作为数据。其语法也比较简单，只需要分别对结点和边作出描述：
+
+````json
+{
+    "nodes": [
+        {"id": 1, "label": "a", "group": 1},
+        {"id": 2, "label": "b", "group": 1},
+        {"id": 3, "label": "c", "group": 2},
+        ...
+    ],
+        
+    "links": [
+        {"source": 1, "target": 2, "value": 5},
+		{"source": 1, "target": 3, "value": 6},
+		{"source": 2, "target": 3, "value": 2},
+    ]
+}
+````
+
+然后在 JavaScript 脚本中按照相应的方式引入即可。
+
+### 3.2 Gexf.js
+
+　　[Gexf.js](https://github.com/raphv/gexf-js) 是一款查看 `.gexf` 或 `.json` 图文件格式的插件，使用起来比较简单，只需要在下载到本地之后解压缩，把要查看的图文件复制到文件夹内。打开 `config.js`，在第四行双引号内输入图文件的名称：
+
+````javascript
+/*** USE THIS FILE TO SET OPTIONS ***/
+
+GexfJS.setParams({
+    graphFile : "les-miserables.gexf",
+        /*
+            The GEXF file to show ! -- can be overriden by adding
+            a hash to the document location, e.g. index.html#celegans.gexf
+            GEXF files can now be replaced by pre-processed JSON files (use gexf2json.py)
+            for faster load time
+        */
+	...
+````
+
+保存后打开 `index.html` 文件即可，效果如图所示：
+
+![](pic/gexf-js-demo.png)
+
+### 3.3 Sigma.js
+
+　　[Sigma.js](http://sigmajs.org/) 也可以把 `.json` 格式的图文件以 JavaScript 的形式展示出来。方便的是，我们可以利用 Gephi 的 `SigmaExporter` 插件直接生成（插件的安装方法参见上 [§2.4](#2.4-网络图的保存)）。
+
+　　插件安装完成后，在菜单栏中选择 `文件(F) -> 输出 -> Sigma.js Template...`，弹出窗口的设置说明如下图所示：
+
+![](pic/sigma-js-exporter.png)
+
+设置完成后单击确定，就会在指定目录下生成一个名为 `network` 的文件夹，打开其中的 `index.html` 文件即可，效果如图所示：
+
+![](pic/sigma-js-demo.png)
+
+### 3.4 其他 JavaScript 脚本
+
+　　除了上述的 Gexf.js 和 Sigma.js 之外，还有很多 JavaScript 脚本都可以完成网络图的可视化。由于具体的代码设置不尽相同，我们这里仅以非常流行的数据可视化脚本 [D3.js](https://d3js.org/) 为例进行演示，其代码可以参见 [Observable](https://observablehq.com/@d3/force-directed-graph) 平台。
 
 
-## 参考文献
 
-- Hagberg, Aric A., Schult, Daniel A. & Swart, Pieter J. (2008): [Exploring Network Structure, Dynamics, and Function Using NetworkX](conference.scipy.org/proceedings/SciPy2008/paper_2/). In Gäel Varoquaux, Travis Vaught, and Jarrod Millman (eds). [*Proceedings of the 7th Python in Science Conference (SciPy2008, Pasadena, CA)*](http://conference.scipy.org/proceedings/SciPy2008/index.html): 11-15.
-- Hunter, John D. (2007): [Matplotlib: A 2D Graphics Environment](https://doi.org/10.1109/MCSE.2007.55). *Computing in Science & Engineering*, 9, (3): 90-95.
