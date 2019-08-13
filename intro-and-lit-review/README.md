@@ -84,17 +84,19 @@
 
 　　**3.3.2** 游函、丘内藤（List & Hill, [待刊](#list-forthcoming)）
 
-### 3.4. 已有成果的评价（evaluation）
+### 3.4. 拟音的检验
 
-　　如前所述，网络分析能在传统研究方法的基础上，帮助我们更好地处理、分析材料。除此之外，游函（List, [2018a](#list2018): §2.3）还尝试利用这一方法检验了其他学者已有的成果，包括以下两个方面：其一是上古音构拟的系统，其二是韵部的分析。
+　　如前所述，网络分析能在传统研究方法的基础上，帮助我们更好地处理、分析材料。除此之外，游函（List, [2018a](#list2018): §2.3）还尝试利用这一方法检验（evaluate）了其他学者已有的成果，包括以下两个方面：其一是上古音构拟的系统，其二是韵部的分析。
 
-　　**3.4.1** 游函利用 [SplitsTree](http://www.splitstree.org/) 软件（Huson, [1998](#huson1998); Huson & Bryant, [2006](#huson2006)）运行了 NeighborNet 算法（Bryant & Moulton, [2004](#bryant2004)），比较了白一平—沙加尔（Baxter & Sagart, [2014](baxter2014)）、高本汉（Karlgren, [1950](#karlgren1950)）、李方桂（[1971](#lifanggui1971)）、潘悟云（[2000](#panwuyun2000)）、许思莱（Schuessler, [2007](#schuessler2007)）、斯塔罗斯京（Старистин, [1989](#starostin1989)）、王力（[1980](#wangli1980)）和郑张尚芳（[2003](#zhengzhang2003)）共计八家对《诗经》韵脚字主要元音拟音的异同，结果如下所示（引自 List, [2018a](#list2018)）
+　　**3.4.2** 游函按照探索性数据分析（exploratory data analysis）的思路，利用 [SplitsTree](http://www.splitstree.org/) 软件（Huson, [1998](#huson1998); Huson & Bryant, [2006](#huson2006)）运行了 NeighborNet 算法（Bryant & Moulton, [2004](#bryant2004)），比较了白一平—沙加尔（Baxter & Sagart, [2014](baxter2014)）、高本汉（Karlgren, [1950](#karlgren1950)）、李方桂（[1971](#lifanggui1971)）、潘悟云（[2000](#panwuyun2000)）、许思莱（Schuessler, [2007](#schuessler2007)）、斯塔罗斯京（Старистин, [1989](#starostin1989)）、王力（[1980](#wangli1980)）和郑张尚芳（[2003](#zhengzhang2003)）共计八家对《诗经》韵脚字主要元音拟音的异同，结果如下所示（引自 List, [2018a](#list2018)）：
 
 ![](pic/list-2018-fig8.png)
 
+　　NeighborNet 算法最初用于生物学，可以展示调查对象明显的相同或相异，也被广泛地运用在语言学的方言学和历史语言比较（Bryant *et al.*, [2005](#bryant2005); Heggarty *et al.* [2010](#heggarty2010)）。从图中我们不难看出，上述八家可以分成三组：（1）高本汉、李方桂、王力；（2）潘悟云、郑张尚芳；（3）斯塔罗斯京、许思莱、白一平—沙加尔。大而言之，也就是六元音（2、3）和非六元音（1）的对立。游函认为，第（２）组的类似不足为奇，但第（３）组之间的相似性是值得注意的。
+
 ## 4. 网络分析方法的其他运用
 
-　　目前，网络分析方法在古汉语的其他领域中的应用还比较有限。北京师范大学汉字研究与现代应用实验室制作的汉字全息资源应用系统（[2019](#bnu2019)，以下简称「全息库」）为我们展示了一个很好的思路。
+　　目前，网络分析方法在古汉语的其他领域中的应用还比较有限。北京师范大学汉字研究与现代应用实验室（[2019](#bnu2019)）制作的汉字全息资源应用系统（以下简称「全息库」）为我们展示了一个很好的思路。
 
 　　全息库在「专书检索」选项卡「综合系联」中的「训释系联」里，使用了 JavaScript 的 [vis.js](https://github.com/visjs/vis-network) 插件，实现了《说文》《尔雅》《释名》《方言》四本最为重要的小学专书中训释词和被训释词的自动系联，其效果如图所示：
 
@@ -113,18 +115,25 @@
 - <a name="bnu2019"></a>北京师范大学汉字研究与现代应用实验室 （2019） 《[汉字全息资源应用系统](http://qxk.bnu.edu.cn/)》。访问日期：2019 年 8 月 4 日。
 - <a name="gengzhensheng2004"></a>耿振生 （2004） 《20 世纪汉语音韵学方法论》，北京大学出版社。
 - <a name="hujiajia2018"></a>胡佳佳 （2018） [网络分析方法在音韵学教学中的应用——以《广韵》反切系联为例](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)，《励耘语言学刊》第 2 期，155-165 页。
-- <a name="baxter2014"></a>Baxter, W. H. & Sagart, L. (2014). [*Old Chinese: a New Reconstruction*](https://doi.org/10.1093/acprof:oso/9780199945375.001.0001). New York: Oxford University Press.
+- <a name="lifanggui1971"></a>李方桂 （1971） 上古音研究，《清华学报》第 9 期，1-60 页。
+- <a name="panwuyun2000"></a>潘悟云 （2000） 《汉语历史音韵学》，上海教育出版社。
+- <a name="wangli1980"></a>王　力 （1980） 《诗经韵读》，上海古籍出版社。
+- <a name="zhengzhang2003"></a>郑张尚芳 （2003） 《上古音系》，上海教育出版社。
+- <a name="baxter2014"></a>Baxter, W. H., 白一平 & Sagart, L. 沙加尔 (2014). [*Old Chinese: a New Reconstruction*](https://doi.org/10.1093/acprof:oso/9780199945375.001.0001). Oxford: Oxford University Press.
 - <a name="bondy2013"></a>Bondy, J. A., & Murty, U. S. R. (2013). [*Graph Theory*](https://www.springer.com/gp/book/9781846289699). 3rd ed. Berlin, Heidelberg: Springer-Verlag. 第一版汉译本：邦迪、默蒂《图论及其应用》，吴望名译，科学出版社，1984 年。
 - <a name="brandes2005"></a>Brandes, U., & Erlebach, T. (2005). [*Network Analysis: Methodological Foundations*](https://link.springer.com/book/10.1007/b106453). Berlin, Heidelberg: Springer-Verlag.
 - <a name="bryant2004"></a>Bryant, D., & Moulton, V. (2004). [Neighbor-Net: an agglomerative method for the construction of phylogenetic networks](https://doi.org/10.1093/molbev/msh018). *Molecular Biology and Evolution*, 21(2), 255-265.
 - <a name="hagberg2008"></a>Hagberg, A. A., Schult, D. A., & Swart, P. J. (2008). [Exploring network structure, dynamics, and function using NetworkX](http://conference.scipy.org/proceedings/SciPy2008/paper_2/). In G. Varoquaux, T. Vaught, & J. Millman (eds.) *Proceedings of the 7th Python in Science Conference* (pp. 11-15).
-- Hill, N. W. & List, J.-M. (forthcoming). [Using Chinese character formation graphs to test proposals in Chinese historical phonology](http://lingulist.de/documents/papers/hill-list-2019-chinese-character-formation-graphs.pdf). *Bulletin of Chinese Linguistics*, ???, 1-16.
-- Hunter, J. D. (2007). [Matplotlib: A 2D Graphics Environment](https://doi.org/10.1109/MCSE.2007.55). *Computing in Science & Engineering*, 9(3), 90-95.
-- Huson, D. H. (1998). [SplitsTree: analyzing and visualizing evolutionary data](https://doi.org/10.1093/bioinformatics/14.1.68). *Bioinformatics*, 14(1), 68-73.
-- Huson, D. H., & Bryant, D. (2006). [Application of Phylogenetic Networks in Evolutionary Studies](https://doi.org/10.1093/molbev/msj030). *Molecular Biology and Evolution*, 23(2), 254-267. 
-- Karlgren, B. (1957). [Gramma Serica Recensa](http://ss.zhizhen.com/detail_38502727e7500f26f1ce104a15568ce8e2ee8db6d8d18d4d1921b0a3ea255101ff20232bc5d7271392ca6eb2c71318865155c5438fbb21eab02f26b59238cf601ee603dc6f3d002408283ada86f7e698?). *Bulletin of the Museum of Far Eastern Antiquities*, 29. 汉译本：高本汉《[汉文典](http://ss.zhizhen.com/detail_38502727e7500f26ea2dfaed11771665fed4b47e2deecb0f1921b0a3ea25510134114c969f2eae5cc744720e3130b751ed88dfe5746c33d69cb51d43696fa7ef69b6d1a0a8fc4207fba42c3daf60db7d?&apistrclassfy=0_8_2)》，潘悟云、杨剑桥、陈重业、张洪明译，上海辞书出版社，1997 年。
-- List, J.-M. (2016a). [Using network models to analyze Old Chinese rhyme data](https://doi.org/10.1163/2405478X-00902004). *Bulletin of Chinese Linguistics*, 9(2), 218-241. 数据和源代码见氏 (2016b): [digling/shijing: Data and Code for the Shījīng Network Analysis (Version v1.0)](http://doi.org/10.5281/zenodo.167341). Zenodo. 
-- —— (2018a): [More on network approaches in Historical Chinese Phonology (音韻學)](https://hal.archives-ouvertes.fr/hal-01706927v2/document). Paper prepared for the LFK Society Young Scholars Symposium. Taipei: Li Fang-Kuei Society for Chinese Linguistics. 数据和源代码见氏 (2018b): [Source Code Accompanying the Paper "More on network approaches in Historical Chinese Phonology (音韻學)"](http://doi.org/10.5281/zenodo.1171967). Zendo. 
-- Newman, Mark E.J. (2010): [*Networks: an Introduction*](https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199206650.001.0001/acprof-9780199206650). New York: Oxford University Press.
-- Sagart, Laurent (1999): [*The Roots of Old Chinese*](https://doi.org/10.1075/cilt.184). Philadelphia: John Benjamins. 汉译本：沙加尔《[上古汉语词根](http://ss.zhizhen.com/detail_38502727e7500f264b1a17c7914b5b8eb7d8e42d1448219a1921b0a3ea25510134114c969f2eae5cd8a964fdd6ecd3537ea0d09aa8e546031ebd9f0dd9d277dcf3cd01ab5af9a03019ea194ccb5b9f2e?&apistrclassfy=0_8_2)》，龚群虎译，上海教育出版社，2004 年。
-- Старостин, С.А. (1989) *Реконструкция Древнекитайской Фонологической Системы (Reconstruction of the Phonological System of Old Chinese)*. Москва: Наука. 汉译本：斯塔罗斯京《古代汉语音系的构拟》，张兴亚译，唐作藩审定，北京大学出版社，2012 年。
+- <a name="hill-forthcoming"></a>Hill, N. W. 丘内藤 & List, J.-M. 游函 (forthcoming). [Using Chinese character formation graphs to test proposals in Chinese historical phonology](http://lingulist.de/documents/papers/hill-list-2019-chinese-character-formation-graphs.pdf). *Bulletin of Chinese Linguistics*, ???, 1-16.
+- <a name="hunter2007"></a>Hunter, J. D. (2007). [Matplotlib: A 2D Graphics Environment](https://doi.org/10.1109/MCSE.2007.55). *Computing in Science & Engineering*, 9(3), 90-95.
+- <a name="huson1998"></a>Huson, D. H. (1998). [SplitsTree: analyzing and visualizing evolutionary data](https://doi.org/10.1093/bioinformatics/14.1.68). *Bioinformatics*, 14(1), 68-73.
+- <a name="huson2006"></a>Huson, D. H., & Bryant, D. (2006). [Application of Phylogenetic Networks in Evolutionary Studies](https://doi.org/10.1093/molbev/msj030). *Molecular Biology and Evolution*, 23(2), 254-267. 
+- <a name="karlgren1950"></a>Karlgren, B. 高本汉 (1950). *The Book of Odes: Chinese text, transcription and translation*. Stockholm: Museum of Far Eastern Antiquities. 
+- <a name="karlgren1957"></a>—— (1957). [Gramma Serica Recensa](http://ss.zhizhen.com/detail_38502727e7500f26f1ce104a15568ce8e2ee8db6d8d18d4d1921b0a3ea255101ff20232bc5d7271392ca6eb2c71318865155c5438fbb21eab02f26b59238cf601ee603dc6f3d002408283ada86f7e698?). *Bulletin of the Museum of Far Eastern Antiquities*, 29, 1-332. 汉译本：《汉文典》，潘悟云、杨剑桥、陈重业、张洪明译，上海辞书出版社，1997 年。
+- <a name="list2016"></a>List, J.-M. 游函 (2016a). [Using network models to analyze Old Chinese rhyme data](https://doi.org/10.1163/2405478X-00902004). *Bulletin of Chinese Linguistics*, 9(2), 218-241. 数据和源代码见氏 (2016b): [digling/shijing: Data and Code for the Shījīng Network Analysis (Version v1.0)](http://doi.org/10.5281/zenodo.167341). Zenodo. 
+- <a name="list2017"></a>—— (2017a). [Vowel purity and rhyme evidence in Old Chinese reconstruction](https://doi.org/10.1186/s40655-017-0021-8). *Lingua Sinica*, 3(1), 1-17. 数据和源代码见氏 (2017b). [digling/vowel-purity-paper: Official publication release (version 1.0)](http://doi.org/10.5281/zenodo.232163). Zenodo.
+- <a name="list2018"></a>—— (2018a). [More on network approaches in Historical Chinese Phonology (音韻學)](https://hal.archives-ouvertes.fr/hal-01706927v2/document). Paper prepared for the LFK Society Young Scholars Symposium. Taipei: Li Fang-Kuei Society for Chinese Linguistics. 数据和源代码见氏 (2018b). [Source Code Accompanying the Paper "More on network approaches in Historical Chinese Phonology (音韻學)"](http://doi.org/10.5281/zenodo.1171967). Zendo. 
+- <a name="newman2010"></a>Newman, Mark E.J. (2010): [*Networks: an Introduction*](https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199206650.001.0001/acprof-9780199206650). New York: Oxford University Press.
+- <a name="sagart1999"></a>Sagart, Laurent 沙加尔 (1999). [*The Roots of Old Chinese*](https://doi.org/10.1075/cilt.184). Philadelphia: John Benjamins. 汉译本：《[上古汉语词根](http://ss.zhizhen.com/detail_38502727e7500f264b1a17c7914b5b8eb7d8e42d1448219a1921b0a3ea25510134114c969f2eae5cd8a964fdd6ecd3537ea0d09aa8e546031ebd9f0dd9d277dcf3cd01ab5af9a03019ea194ccb5b9f2e?&apistrclassfy=0_8_2)》，龚群虎译，上海教育出版社，2004 年。
+- <a name="schuessler2007"></a>Schuessler, A. 许思莱, comp. (2007). *ABC Etymological Dictionary of Old Chinese*. Honolulu: University of Hawai’i Press.
+- <a name="starostin2012"></a>Старостин, С.А. (Starostin, S.A.) 斯塔罗斯京 (1989) *Реконструкция Древнекитайской Фонологической Системы* (*Reconstruction of the Phonological System of Old Chinese*). Москва: Наука. 汉译本：《古代汉语音系的构拟》，张兴亚译，唐作藩审定，北京大学出版社，2012 年。
