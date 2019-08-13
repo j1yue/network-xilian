@@ -4,7 +4,9 @@
 
 ## 1. 网络分析的基本概念
 
-　　**1.1** 简而言之，**网络**（network）是由线段连接在一起的点的集合，在物理学、生物学和社会学等领域中都有广泛的应用。下面简单地介绍一些基本概念，更多内容可以参见 Brandes & Erlebach（[2005](https://link.springer.com/book/10.1007/b106453)）、Bondy & Murty（[2013](https://www.springer.com/gp/book/9781846289699)）等专著。按照离散数学中图论（graph theory）的术语，各个点被称作**顶点**（vertices）或**结点**（nodes），而连接结点的线段（或弧线）称之为**边**（edges），如图所示（引自 Newman, [2010](https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199206650.001.0001/acprof-9780199206650)）：
+　　**1.1** 简而言之，**网络**（network）是由线段连接在一起的点的集合，在物理学、生物学和社会学等领域中都有广泛的应用。下面简单地介绍一些基本概念，更多内容可以参见 Brandes & Erlebach（[2005](#brandes2005)）、Bondy & Murty（[2013](#bondy2013)）等专著。
+
+　　按照离散数学中图论（graph theory）的术语，各个点被称作**顶点**（vertices）或**结点**（nodes），而连接结点的线段（或弧线）称之为**边**（edges），如图所示（引自 Newman, [2010](#newman2010)）：
 
 ![](pic/vertices-and-nodes.png)
 
@@ -30,7 +32,7 @@
 
 　　由于篇幅所限，每种工具的使用用法也各不相同，因此这里不打算介绍的操作步骤，只是对上述这三种方式的优缺点进行简要的评述。
 
-　　**2.2** 作为一门编程语言，Python 的使用需要安装相应的环境，而且所有设置都需要以编程命令的形式完成，因此相对而言直观性较差，安装、学习的成本较高。但也正得益于此，Python 具有更强的可定制性，加之其开源、活跃的社区，让使用者可以根据自己的实际需要灵活调整其配置，并直接编写相关程序以展开后续的数据分析工作。
+　　**2.2** 作为一门编程语言，Python 的使用需要安装相应的编程环境和 NetworkX（Hagberg *et al.*, [2008](#hagberg2008)）、Matplotlib（Hunter, [2007](#hunter2007)）两个扩展包，而且所有设置都需要以编程命令的形式完成，因此相对而言直观性较差，安装、学习的成本较高。但也正得益于此，Python 具有更强的可定制性，加之其开源、活跃的社区，让使用者可以根据自己的实际需要灵活调整其配置，并直接编写相关程序以展开后续的数据分析工作。
 
 　　通过 JavaScript 实现网络图制作与分析的脚本很多，选择丰富，其使用方式也不尽相同。总体说来，使用 JavaScript 同样要安装一定编程环境，还需要一些 HTML/CSS 的基础知识。但 JavaScript 作为一门 Web 编程语言，被广泛运用于几乎所有现代的 HTML 网页上，因此虽然其数据处理能力稍弱，但由于 JavaScript 不仅可以生成图片，更能够以可交互的形式应用在网页上，不受平台和软件格式的限制，十分便于结果的查看和共享。
 
@@ -42,27 +44,27 @@
 
 ## 3. 网络分析与音韵学研究
 
-　　目前，网络分析方法在音韵学，特别是上古音领域的应用较为广泛。但首先需要说明的是：从现有的成果来看，网络分析并不是一种新的「研究方法」，只是在传统研究方法的基础上，帮助我们认识、分析材料（或数据）的一种手段。因此，我们按照耿振生（2004）对音韵学研究方法的总结，分别加以叙述。
+　　目前，网络分析方法在音韵学，特别是上古音领域的应用较为广泛。但首先需要说明的是：从现有的成果来看，网络分析并不是一种新的「研究方法」，只是在传统研究方法的基础上，帮助我们认识、分析材料（或数据）的一种手段。因此，我们按照耿振生（[2004](#gengzhensheng2004)）对音韵学研究方法的总结，分别加以叙述。
 
 ### 3.1. 韵脚字归纳法
 
-　　游函（List, [2016a](https://doi.org/10.1163/2405478X-00902004)）最早用网络分析方法系联了《诗经》押韵。
+　　游函（List, [2016a](#list2016)）最早用网络分析方法系联了《诗经》押韵。
 
 
 
 ### 3.2. 反切系联法
 
-　　游函（List, [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document)）利用网络分析方法对《广韵》中反切上字的分组现象作了考察。
+　　游函（List, [2018a](#list2018)）利用网络分析方法对《广韵》中反切上字的分组现象作了考察。
 
-　　**3.2.2** 胡佳佳（[2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)）介绍了网络分析方法在实际教学中的作用。下面分别介绍其系联反切上字和下字的方法。
+　　**3.2.2** 胡佳佳（[2018](#hujiajia2018)）介绍了网络分析方法在实际教学中的作用。下面分别介绍其系联反切上字和下字的方法。
 
-　　在系联反切下字时，先找出一个韵内所有反切下字（我们记作 $V_1$），再查出这些字所在小韵的反切下字（我们记作 $V_2$），显然 $V_2 \in V_1$，又因为「反切下字之间的韵类等价关系是双向的，所以网络图中的边是无方向的」，就可以建立关联函数 $\psi_G(e)=\{V_1, V_2\}$。以五支韵为例，在 Gephi 软件中生成结果如下图所示（引自胡佳佳, [2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq): 159）：
+　　在系联反切下字时，先找出一个韵内所有反切下字（我们记作 $V_1$），再查出这些字所在小韵的反切下字（我们记作 $V_2$），显然 $V_2 \in V_1$，又因为「反切下字之间的韵类等价关系是双向的，所以网络图中的边是无方向的」，就可以建立关联函数 $\psi_G(e)=\{V_1, V_2\}$。以五支韵为例，在 Gephi 软件中生成结果如下图所示（引自胡佳佳, [2018](#hujiajia2018): 159）：
 
 ![](pic/hu-fig2.png)
 
 但我们认为这种方法有以下两点不足。其一，必须单独分析「上字同类者，下字必不同类」的情况，对分析条例的体现并不直观；其二，只对反切下字进行了系联，不便于像传统的以小韵为单位的系联一样，展现各个小韵之间同用、互用、递用的关系。
 
-　　系联反切上字的方法与之基本相同，先列出《广韵》中全部反切上字（我们记作 $U_1$），再查出这些字所在小韵的反切上字（我们记作 $U_2$）。类似地，我们也可以得到关联函数 $\psi_H(e)=\{U_1, U_2\}$，生成的网络图如下所示（引自胡佳佳, [2018](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq): 162）：
+　　系联反切上字的方法与之基本相同，先列出《广韵》中全部反切上字（我们记作 $U_1$），再查出这些字所在小韵的反切上字（我们记作 $U_2$）。类似地，我们也可以得到关联函数 $\psi_H(e)=\{U_1, U_2\}$，生成的网络图如下所示（引自胡佳佳, [2018](#hujiajia2018): 162）：
 
 ![](pic/hu-fig5.png)
 
@@ -72,23 +74,27 @@
 
 　　我们知道，形声字中包含着丰富的古音信息，为上古音研究提供了重要线索；但同时其信息又是十分复杂的，需要仔细甄别，特别是在声母方面，更是「言人人殊」，必须要持谨慎态度（耿振生, 2004: §3）。网络分析方法的直观性，可以为我们更准确地认识谐声系统提供很多帮助。西方学者游函和丘内藤在这方面做出了初步的尝试。
 
-　　**3.3.1** 游函（List, [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document): §2.1）利用有向图，分析了谐声系列与三等/非三等的关系。
+　　**3.3.1** 游函（List, [2018a](#list2018): §2.1）利用有向图，分析了谐声系列与三等/非三等的关系。
 
-　　蒲立本把上古汉语的音节分成两类，A 类是中古的非三等，B 类是中古的三等，有前腭介音 -*j*-。沙加尔（Sagart, [1999](https://doi.org/10.1075/cilt.184): §§2.7, 3.3.2）认为这两种类型和谐声系列有关。比如，在下图（引自 List, [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document): 7）中，蓝色的结点属于 A 类，黄色的结点属于 B 类：
+　　蒲立本把上古汉语的音节分成两类，A 类是中古的非三等，B 类是中古的三等，有前腭介音 -*j*-。沙加尔（Sagart, [1999](#sagart1999): §§2.7, 3.3.2）认为这两种类型和谐声系列有关。比如，在下图（引自 List, [2018a](#list2018): 7）中，蓝色的结点属于 A 类，黄色的结点属于 B 类：
 
-![](pic/xiesheng.png)
+![](pic/list-2018-fig2.png)
 
-　　游函利用 Python 语言，分析了高本汉（Karlgren, [1957](http://ss.zhizhen.com/detail_38502727e7500f26f1ce104a15568ce8e2ee8db6d8d18d4d1921b0a3ea255101ff20232bc5d7271392ca6eb2c71318865155c5438fbb21eab02f26b59238cf601ee603dc6f3d002408283ada86f7e698?)）归纳的 625 组谐声系列。如果某一组类中超过 70% 的字属于中古的三等，那么就归入上古的 B 类；反之，如果不到 30% 的字属于中古三等，则将其归入上古的 A 类。在这样的条件下，游函找到了 16 组谐声偏旁符合这一规律（见原文附录 B），并指出其中 8 组是「十分显著」的例子。
+游函利用 Python 语言，分析了高本汉《分析字典》（Karlgren, [1957](#karlgren1957)）中的 625 组谐声系列。如果某一组类中超过 70% 的字属于中古的三等，那么就归入上古的 B 类；反之，如果不到 30% 的字属于中古三等，则将其归入上古的 A 类。在这样的条件下，游函找到了 16 组谐声偏旁符合这一规律（见原文附录 B），并指出其中 8 组是「十分显著」的例子。
 
-　　**3.3.2** 游函、丘内藤（List & Hill, [待刊](http://lingulist.de/documents/papers/hill-list-2019-chinese-character-formation-graphs.pdf)）
+　　**3.3.2** 游函、丘内藤（List & Hill, [待刊](#list-forthcoming)）
 
-### 3.4 古音构拟的检验
+### 3.4. 已有成果的评价（evaluation）
 
+　　如前所述，网络分析能在传统研究方法的基础上，帮助我们更好地处理、分析材料。除此之外，游函（List, [2018a](#list2018): §2.3）还尝试利用这一方法检验了其他学者已有的成果，包括以下两个方面：其一是上古音构拟的系统，其二是韵部的分析。
 
+　　**3.4.1** 游函利用 [SplitsTree](http://www.splitstree.org/) 软件（Huson, [1998](#huson1998); Huson & Bryant, [2006](#huson2006)）运行了 NeighborNet 算法（Bryant & Moulton, [2004](#bryant2004)），比较了白一平—沙加尔（Baxter & Sagart, [2014](baxter2014)）、高本汉（Karlgren, [1950](#karlgren1950)）、李方桂（[1971](#lifanggui1971)）、潘悟云（[2000](#panwuyun2000)）、许思莱（Schuessler, [2007](#schuessler2007)）、斯塔罗斯京（Старистин, [1989](#starostin1989)）、王力（[1980](#wangli1980)）和郑张尚芳（[2003](#zhengzhang2003)）共计八家对《诗经》韵脚字主要元音拟音的异同，结果如下所示（引自 List, [2018a](#list2018)）
+
+![](pic/list-2018-fig8.png)
 
 ## 4. 网络分析方法的其他运用
 
-　　目前，网络分析方法在其他领域中的应用还比较有限。北京师范大学汉字研究与现代应用实验室制作的汉字全息资源应用系统（[2019](http://qxk.bnu.edu.cn/)，以下简称「全息库」），为我们展示了一个很好的思路。
+　　目前，网络分析方法在古汉语的其他领域中的应用还比较有限。北京师范大学汉字研究与现代应用实验室制作的汉字全息资源应用系统（[2019](#bnu2019)，以下简称「全息库」）为我们展示了一个很好的思路。
 
 　　全息库在「专书检索」选项卡「综合系联」中的「训释系联」里，使用了 JavaScript 的 [vis.js](https://github.com/visjs/vis-network) 插件，实现了《说文》《尔雅》《释名》《方言》四本最为重要的小学专书中训释词和被训释词的自动系联，其效果如图所示：
 
@@ -104,15 +110,21 @@
 
 ## 参考文献
 
-- 北京师范大学汉字研究与现代应用实验室 （2019）[汉字全息资源应用系统](http://qxk.bnu.edu.cn/)。访问日期：2019 年 8 月 4 日。
-- 耿振生 （2004） 《20 世纪汉语音韵学方法论》，北京大学出版社。
-- 胡佳佳 （2018） [网络分析方法在音韵学教学中的应用——以《广韵》反切系联为例](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)，《励耘语言学刊》第 2 期，155-165 页。
-- Bondy, John A. & Murty, Uppaluri S.R. (2013): [Graph Theory](https://www.springer.com/gp/book/9781846289699). 3rd ed. Berlin, Heidelberg: Springer-Verlag. 第一版汉译本见 J.A. 邦迪、U.S.R. 默蒂：《图论及其应用》，吴望名译，科学出版社，1984。
-- Brandes, Ulrik & Erlebach Thomas eds. (2005): [*Network Analysis: Methodological Foundations*](https://link.springer.com/book/10.1007/b106453). Berlin, Heidelberg: Springer-Verlag.
-- Hill, Nathan W. & List, Johann-Mattis (forthcoming): [Using Chinese character formation graphs to test proposals in Chinese historical phonology](http://lingulist.de/documents/papers/hill-list-2019-chinese-character-formation-graphs.pdf). *Bulletin of Chinese Linguistics*, 1-16.
-- Karlgren, Bernhard (1957): [Gramma Serica Recensa](http://ss.zhizhen.com/detail_38502727e7500f26f1ce104a15568ce8e2ee8db6d8d18d4d1921b0a3ea255101ff20232bc5d7271392ca6eb2c71318865155c5438fbb21eab02f26b59238cf601ee603dc6f3d002408283ada86f7e698?). *Bulletin of the Museum of Far Eastern Antiquities*, 29. 汉译本见高本汉：《[汉文典](http://ss.zhizhen.com/detail_38502727e7500f26ea2dfaed11771665fed4b47e2deecb0f1921b0a3ea25510134114c969f2eae5cc744720e3130b751ed88dfe5746c33d69cb51d43696fa7ef69b6d1a0a8fc4207fba42c3daf60db7d?&apistrclassfy=0_8_2)》，潘悟云、杨剑桥、陈重业、张洪明译，上海辞书出版社，1997。
-- List, Johann-Mattis (2016a): [Using Network Models to Analyze Old Chinese Rhyme Data](https://doi.org/10.1163/2405478X-00902004). *Bulletin of Chinese Linguistics*, 9(2), 218-241.
-- —— (2016b). digling/shijing: Data and Code for the Shījīng Network Analysis (Version v1.0). Zenodo. http://doi.org/10.5281/zenodo.167341.
-- —— (2018): [More on network approaches in Historical Chinese Phonology](https://hal.archives-ouvertes.fr/hal-01706927v2/document). Paper prepared for the LFK Society Young Scholars Symposium. Taipei: Li Fang-Kuei Society for Chinese Linguistics.
+- <a name="bnu2019"></a>北京师范大学汉字研究与现代应用实验室 （2019） 《[汉字全息资源应用系统](http://qxk.bnu.edu.cn/)》。访问日期：2019 年 8 月 4 日。
+- <a name="gengzhensheng2004"></a>耿振生 （2004） 《20 世纪汉语音韵学方法论》，北京大学出版社。
+- <a name="hujiajia2018"></a>胡佳佳 （2018） [网络分析方法在音韵学教学中的应用——以《广韵》反切系联为例](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)，《励耘语言学刊》第 2 期，155-165 页。
+- <a name="baxter2014"></a>Baxter, W. H. & Sagart, L. (2014). [*Old Chinese: a New Reconstruction*](https://doi.org/10.1093/acprof:oso/9780199945375.001.0001). New York: Oxford University Press.
+- <a name="bondy2013"></a>Bondy, J. A., & Murty, U. S. R. (2013). [*Graph Theory*](https://www.springer.com/gp/book/9781846289699). 3rd ed. Berlin, Heidelberg: Springer-Verlag. 第一版汉译本：邦迪、默蒂《图论及其应用》，吴望名译，科学出版社，1984 年。
+- <a name="brandes2005"></a>Brandes, U., & Erlebach, T. (2005). [*Network Analysis: Methodological Foundations*](https://link.springer.com/book/10.1007/b106453). Berlin, Heidelberg: Springer-Verlag.
+- <a name="bryant2004"></a>Bryant, D., & Moulton, V. (2004). [Neighbor-Net: an agglomerative method for the construction of phylogenetic networks](https://doi.org/10.1093/molbev/msh018). *Molecular Biology and Evolution*, 21(2), 255-265.
+- <a name="hagberg2008"></a>Hagberg, A. A., Schult, D. A., & Swart, P. J. (2008). [Exploring network structure, dynamics, and function using NetworkX](http://conference.scipy.org/proceedings/SciPy2008/paper_2/). In G. Varoquaux, T. Vaught, & J. Millman (eds.) *Proceedings of the 7th Python in Science Conference* (pp. 11-15).
+- Hill, N. W. & List, J.-M. (forthcoming). [Using Chinese character formation graphs to test proposals in Chinese historical phonology](http://lingulist.de/documents/papers/hill-list-2019-chinese-character-formation-graphs.pdf). *Bulletin of Chinese Linguistics*, ???, 1-16.
+- Hunter, J. D. (2007). [Matplotlib: A 2D Graphics Environment](https://doi.org/10.1109/MCSE.2007.55). *Computing in Science & Engineering*, 9(3), 90-95.
+- Huson, D. H. (1998). [SplitsTree: analyzing and visualizing evolutionary data](https://doi.org/10.1093/bioinformatics/14.1.68). *Bioinformatics*, 14(1), 68-73.
+- Huson, D. H., & Bryant, D. (2006). [Application of Phylogenetic Networks in Evolutionary Studies](https://doi.org/10.1093/molbev/msj030). *Molecular Biology and Evolution*, 23(2), 254-267. 
+- Karlgren, B. (1957). [Gramma Serica Recensa](http://ss.zhizhen.com/detail_38502727e7500f26f1ce104a15568ce8e2ee8db6d8d18d4d1921b0a3ea255101ff20232bc5d7271392ca6eb2c71318865155c5438fbb21eab02f26b59238cf601ee603dc6f3d002408283ada86f7e698?). *Bulletin of the Museum of Far Eastern Antiquities*, 29. 汉译本：高本汉《[汉文典](http://ss.zhizhen.com/detail_38502727e7500f26ea2dfaed11771665fed4b47e2deecb0f1921b0a3ea25510134114c969f2eae5cc744720e3130b751ed88dfe5746c33d69cb51d43696fa7ef69b6d1a0a8fc4207fba42c3daf60db7d?&apistrclassfy=0_8_2)》，潘悟云、杨剑桥、陈重业、张洪明译，上海辞书出版社，1997 年。
+- List, J.-M. (2016a). [Using network models to analyze Old Chinese rhyme data](https://doi.org/10.1163/2405478X-00902004). *Bulletin of Chinese Linguistics*, 9(2), 218-241. 数据和源代码见氏 (2016b): [digling/shijing: Data and Code for the Shījīng Network Analysis (Version v1.0)](http://doi.org/10.5281/zenodo.167341). Zenodo. 
+- —— (2018a): [More on network approaches in Historical Chinese Phonology (音韻學)](https://hal.archives-ouvertes.fr/hal-01706927v2/document). Paper prepared for the LFK Society Young Scholars Symposium. Taipei: Li Fang-Kuei Society for Chinese Linguistics. 数据和源代码见氏 (2018b): [Source Code Accompanying the Paper "More on network approaches in Historical Chinese Phonology (音韻學)"](http://doi.org/10.5281/zenodo.1171967). Zendo. 
 - Newman, Mark E.J. (2010): [*Networks: an Introduction*](https://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199206650.001.0001/acprof-9780199206650). New York: Oxford University Press.
-- Sagart, Laurent (1999): [*The Roots of Old Chinese*](https://doi.org/10.1075/cilt.184). Philadelphia: John Benjamins. 汉译本见沙加尔：《[上古汉语词根](http://ss.zhizhen.com/detail_38502727e7500f264b1a17c7914b5b8eb7d8e42d1448219a1921b0a3ea25510134114c969f2eae5cd8a964fdd6ecd3537ea0d09aa8e546031ebd9f0dd9d277dcf3cd01ab5af9a03019ea194ccb5b9f2e?&apistrclassfy=0_8_2)》，龚群虎译，上海教育出版社，2004。
+- Sagart, Laurent (1999): [*The Roots of Old Chinese*](https://doi.org/10.1075/cilt.184). Philadelphia: John Benjamins. 汉译本：沙加尔《[上古汉语词根](http://ss.zhizhen.com/detail_38502727e7500f264b1a17c7914b5b8eb7d8e42d1448219a1921b0a3ea25510134114c969f2eae5cd8a964fdd6ecd3537ea0d09aa8e546031ebd9f0dd9d277dcf3cd01ab5af9a03019ea194ccb5b9f2e?&apistrclassfy=0_8_2)》，龚群虎译，上海教育出版社，2004 年。
+- Старостин, С.А. (1989) *Реконструкция Древнекитайской Фонологической Системы (Reconstruction of the Phonological System of Old Chinese)*. Москва: Наука. 汉译本：斯塔罗斯京《古代汉语音系的构拟》，张兴亚译，唐作藩审定，北京大学出版社，2012 年。
