@@ -2,17 +2,7 @@
 
 2019.8
 
+- `./intro-and-lit-review` 介绍了网络分析方法的基本概念及其实现方法的特点，并对现有研究成果作了简单介绍；
 
-
-- [x] [网络分析的基本概念](network-intro/README.md#1-网络分析的基本概念)
-- [ ] [现有研究综述](network-intro/README.md#3-网络分析与韵脚字归纳法)
-
-- [x] [网络图的制作方法介绍](network-intro/README.md#2-网络图的实现方法)
-  - [x] [Python](network-intro/python.md)
-  - [ ] [JavaScript](network-intro/js.md)
-  - [ ] [GePhi]((network-intro/gephi.md))
-
-
-
-
+- `./network-tutorial` 三种制作网络图工具（Python、Gephi 和 JavaScript）的具体操作步骤。
 
