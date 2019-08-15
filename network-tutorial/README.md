@@ -265,7 +265,7 @@ plt.show()
 
 　　**2.2.2** 但更多时候，我们只有原始数据，而需要软件为我们生成 `.gexf` 等网络图的格式，这时 Gephi 也能很好地满足我们的需要，支持以表格的形式批量导入结点和边的数据。
 
-　　我们建议最好将源数据保存为 .csv 或 .tsv 格式，因为两者都是以纯文本的形式储存表格数据，因此和 .xlsx 等格式相比，储存空间较小，打开速度更快。两者差别只在于，各列之间的数据在.csv 文件中以英文逗号 , 分隔（即 Comma-Separated Value，逗号分隔值），而 .tsv 文件则是用制表符  分隔的（即 Tab-Separated Value，制表符分隔值）。下面的例子是 .csv 格式，可以直接在 Excel 中读写，完整数据请分别参见这个文件夹下的 `les-miserables-nodes.csv` 和 `les-miserables-edges.csv` 两个文件。
+　　我们建议最好将源数据保存为 .csv 或 .tsv 格式，因为两者都是以纯文本的形式储存表格数据，因此和 .xlsx 等格式相比，储存空间较小，打开速度更快。两者差别只在于，各列之间的数据在.csv 文件中以英文逗号 , 分隔（即 Comma-Separated Value，逗号分隔值），而 .tsv 文件则是用制表符  分隔的（即 Tab-Separated Value，制表符分隔值）。下面的例子是 .csv 格式，可以直接在 Excel 中读写，完整数据请分别参见附件中的 `les-miserables-nodes.csv` 和 `les-miserables-edges.csv` 两个文件。
 
 　　Gephi 软件支持以表格的形式批量导入结点和边的数据。我们建议最好将源数据保存为 `.csv` 或 `.tsv` 格式，因为两者都是以纯文本的形式储存表格数据，因此和 `.xlsx` 等格式相比，储存空间较小，打开速度更快。两者差别只在于，各列之间的数据在`.csv` 文件中以英文逗号 `,` 分隔（即 Comma-Separated Value，逗号分隔值），而 `.tsv` 文件则是用制表符  分隔的（即 Tab-Separated Value，制表符分隔值）。下面的例子是 `.csv` 文件，可以直接在 Excel 中读写。
 
@@ -333,7 +333,7 @@ Source,Target,Type,Id,Label,timeset,Weight
 
 　　如果要生成图片，有两种方式。其一是直接截屏，或者单击下方工具栏的照相机图标截屏。这种方式可以忠实地展现屏幕上的网络图，但图片的质量相对较低。另一种方法则是在菜单栏中选择 `文件(F) -> 输出 -> SVG/PDF/PNG文件`，然后在弹出的窗口中将「文件类型」设置为 `.png` 即可。
 
-　　如果要生成 `.gexf` 文件，在菜单栏中选择 `文件(F) -> 输出 -> 图文件...`，将保存的文件类型设置为 `.gexf` 即可。要生成 `.json` 文件，则需在菜单栏中选择 `工具(T) -> 插件(G) -> 可用插件 -> JSON Exporter`，安装完成后，就可以按上述方法导出了。输出后的结果可以分别参见本文件夹下的 `les-miserables.gexf` 和 `les-miserables.json` 两个文件。
+　　如果要生成 `.gexf` 文件，在菜单栏中选择 `文件(F) -> 输出 -> 图文件...`，将保存的文件类型设置为 `.gexf` 即可。要生成 `.json` 文件，则需在菜单栏中选择 `工具(T) -> 插件(G) -> 可用插件 -> JSON Exporter`，安装完成后，就可以按上述方法导出了。输出后的结果可以分别参见附件中的 `les-miserables.gexf` 和 `les-miserables.json` 两个文件。
 
 ## 3. JavaScript
 

@@ -1,4 +1,4 @@
-# 网络分析方法及其在古汉语研究中的应用综述
+# 网络分析方法及其在古汉语研究中的应用述要
 
 <!-- TOC -->
 
@@ -6,10 +6,10 @@
     - [1. 网络分析的基本概念](#1-网络分析的基本概念)
     - [2. 网络图的实现方法](#2-网络图的实现方法)
     - [3. 网络分析与音韵学研究](#3-网络分析与音韵学研究)
-        - [3.1. 韵脚字归纳法](#31-韵脚字归纳法)
-        - [3.2. 反切系联法](#32-反切系联法)
-        - [3.3. 谐声推演法](#33-谐声推演法)
-        - [3.4. 拟音的检验](#34-拟音的检验)
+        - [3.1. 韵脚字归纳法](#3.1.-韵脚字归纳法)
+        - [3.2. 反切系联法](#3.2.-反切系联法)
+        - [3.3. 谐声推演法](#3.3.-谐声推演法)
+        - [3.4. 拟音的检验](#3.4.-拟音的检验)
     - [4. 网络分析方法的其他运用](#4-网络分析方法的其他运用)
     - [5. 结语](#5-结语)
     - [参考文献](#参考文献)
@@ -24,7 +24,7 @@
 
 ![](pic/vertices-and-nodes.png)
 
-　　**1.2** 一个**网络图**（graph）可以用 $G = (V , E)$ 的形式来表示。图中，结点的集合记作 $V(G) = \{ v_1, v_2, v_3, \cdots, v_n \}$，边的集合记作 $E(G)=\{e_1, e_2, e_3, \cdots, e_n\}$。结点之间的关系称作关联函数，记作 $\psi_G (e)$。
+　　**1.2** 一个**网络图**（graph）可以用 $G = (V , E)$ 的形式来表示。图中，结点的集合记作 $V(G) = \{ v_1, v_2, v_3, \cdots, v_n \}$，边的集合记作 $E(G)=\{e_1, e_2, e_3, \cdots, e_n\}$。结点之间的关系称作**关联函数**，记作 $\psi_G (e)$。
 
 　　网络图既可以是无方向的（undirected），也可以是有方向的（directed）。我们用 $D$ 表示有向图。
 
@@ -68,17 +68,23 @@
 
 ### 3.2. 反切系联法
 
-　　**3.2.1** 游函（List, [2018](#list2018)）利用网络分析方法对《广韵》中反切上字的分组现象作了考察。
+　　**3.2.1** 游函（List, [2018](#list2018)）利用网络分析方法，对《广韵》中反切上字的分组现象作了考察。
+
+　　高本汉（[1915-1926](#karlgren1915)）在陈澧《切韵考》的基础上，认为中古汉语声母有单纯的（série pure）和喻化的（série yodisée，即腭化的 pʲ kʲ tʲ 等 ）两类。这一说法遭到了一些中国学者的批评（参见陆志韦, [1939](#luzhiwei1939); Chao, [1941](#chao1941) 等）。为了考察这一问题，游函系联了《广韵》中的所有反切上字，结果如图所示：
+
+![](pic/list-2018-fig4.png)
+
+文章认为，各声类之间的界限是比较清晰的。至于帮母（*pj*-）和並母（*bj*-）之间的混切，则是多音字导致的，需要手动进行调整。
 
 　　**3.2.2** 胡佳佳（[2018](#hujiajia2018)）从实际教学的角度出发，介绍了网络分析方法在系联《广韵》时的应用，下面分别介绍其系联反切上字和下字的方法。
 
-　　在系联反切下字时，先找出一个韵内所有反切下字（我们记作 $V_1$），再查出这些字所在小韵的反切下字（我们记作 $V_2$），显然 $V_2 \in V_1$，又因为「反切下字之间的韵类等价关系是双向的，所以网络图中的边是无方向的」，就可以建立关联函数 $\psi_G(e)=\{V_1, V_2\}$。以五支韵为例，在 Gephi 软件中生成结果如下图所示（引自胡佳佳, [2018](#hujiajia2018): 159）：
+　　在系联反切下字时，先找出一个韵内所有反切下字（我们记作 $V$），再查出这些字所在小韵的反切下字（我们记作 $V'$），显然 $V' \in V$，又因为「反切下字之间的韵类等价关系是双向的，所以网络图中的边是无方向的」，就可以建立关联函数 $\psi_G(e)=\{V, V'\}$。以五支韵为例，在 Gephi 软件中生成结果如下图所示（引自胡佳佳, [2018](#hujiajia2018): 159）：
 
 ![](pic/hu-fig2.png)
 
 但我们认为这种方法有以下两点不足。其一，必须单独分析「上字同类者，下字必不同类」的情况，对分析条例的体现并不直观；其二，只对反切下字进行了系联，不便于像传统的以小韵为单位的系联一样，展现各个小韵之间同用、互用、递用的关系。
 
-　　系联反切上字的方法与之基本相同，先列出《广韵》中全部反切上字（我们记作 $U_1$），再查出这些字所在小韵的反切上字（我们记作 $U_2$）。类似地，我们也可以得到关联函数 $\psi_H(e)=\{U_1, U_2\}$，生成的网络图如下所示（引自胡佳佳, [2018](#hujiajia2018): 162）：
+　　系联反切上字的方法与之基本相同，先列出《广韵》中全部反切上字（我们记作 $U$），再查出这些字所在小韵的反切上字（我们记作 $U'$）。类似地，我们也可以得到关联函数 $\psi_H(e)=\{U, U'\}$，生成的网络图如下所示（引自胡佳佳, [2018](#hujiajia2018): 162）：
 
 ![](pic/hu-fig5.png)
 
@@ -140,6 +146,7 @@
 - <a name="gengzhensheng2004"></a>耿振生 （2004） 《20 世纪汉语音韵学方法论》，北京大学出版社。
 - <a name="hujiajia2018"></a>胡佳佳 （2018） [网络分析方法在音韵学教学中的应用——以《广韵》反切系联为例](http://kns.cnki.net/KCMS/detail/detail.aspx?dbname=cjfd2018&filename=lyyy201802013&dbcode=cjfq)，《励耘语言学刊》第 2 期，155-165 页。
 - <a name="lifanggui1971"></a>李方桂 （1971） [上古音研究](http://thjcs.web.nthu.edu.tw/files/14-1662-41727,r3013-1.php?Lang=zh-tw)，《清华学报》新 9 卷 1-2 期合刊，1-60 页。
+- <a name="luzhiwei1939"></a>陆志韦 （1939） [证《广韵》五十一声类](http://qikan.chaoxing.com/detail_38502727e7500f26f5f51a45e125bc4f6c0bd10351b2cdb01921b0a3ea255101fc1cf1fbb4666ae6677ff564eba69bb038638253d94355cf200bf6efa945afa1c4636e9b134e0c35fb4bf0a7a861571c20b88c6e534e6905ff2392838a1740b511270bb1d955dcf1adfd43ad95f43916)，《燕京学报》第 25 期，4-62 页。
 - <a name="panwuyun2000"></a>潘悟云 （2000） 《[汉语历史音韵学](http://ss.chaoxing.com/detail_38502727e7500f26948ae00ae43ed04b0166c8dc4cf254ac1921b0a3ea25510134114c969f2eae5cf770a7817db5547e23424148916511d53ca13e30ae0eb1ab10b9df34c243887f985ec7a161a0fd58dbee62b8ac2d3a0684882097c756e02f4cd73b6bf75669750be53d09c89beee1)》，上海教育出版社。
 - <a name="sagart2017"></a>沙加尔 （2017） [先秦时期谐声声符的选择问题](http://www.academia.edu/35852895/)，马坤译，澳门大学中国语言文学系、香港浸会大学饶宗颐国学院：「上古音与古文字研究的整合」国际研讨会（International Conference on the Integration of Old Chinese Phonology and Paleography）会议论文。
 - <a name="wangli1980"></a>王　力 （1980） 《[诗经韵读](http://ss.chaoxing.com/detail_38502727e7500f2685813c708ce0786aaf8041489ad86e531921b0a3ea25510134114c969f2eae5c1b9870d3ae764f4172ee75f7146bf19e8612e478be325ef73654d2d6ef57b06bc824e12fd131fe66dbee62b8ac2d3a0684882097c756e02f4cd73b6bf75669750be53d09c89beee1)》，上海古籍出版社。
@@ -149,6 +156,7 @@
 - <a name="brandes2005"></a>Brandes, U., & Erlebach, T. (2005). [*Network Analysis: Methodological Foundations*](https://link.springer.com/book/10.1007/b106453). Berlin, Heidelberg: Springer-Verlag.
 - <a name="bryant2004"></a>Bryant, D., & Moulton, V. (2004). [Neighbor-Net: an agglomerative method for the construction of phylogenetic networks](https://doi.org/10.1093/molbev/msh018). *Molecular Biology and Evolution*, 21(2), 255-265.
 - <a name="bryant2005"></a>Bryant, D., Filimon, F., & Gray, R.D. (2005). [Untangling our past: Languages, Trees, Splits and Networks](http://hdl.handle.net/11858/00-001M-0000-0027-BB27-A). In R. Mace, C. J. Holden, & S. Shennan (Eds.), *The evolution of cultural diversity: a phylogenetic approach* (pp. 67-84). London: UCL Press.
+- <a name="chao1941"></a>Chao, Y. R. 赵元任 (1941). [Distinctions within Ancient Chinese](http://qikan.chaoxing.com/detail_38502727e7500f26a8850c03a9349f554358a57a768c47091921b0a3ea255101c944b624736f9e85530edd1bd6d1c76bceea510be5835f1876361250cb07899454659a22e94f59a302b954de820e4c3020b88c6e534e6905ff2392838a1740b51b2507ad4cb47a2fadfd43ad95f43916). *Harvard Journal of Asiatic Studies*, 5.3-4, 203-233.
 - <a name="gabelentz1881"></a>Gabelentz, G. v. d. 甲伯连孜 (1881) 1953. *Chinesische Grammatik: mit Ausschluss des niederen Stiles und der heutigen Umgangssprache*. Reprint. Berlin: Deutscher Verlag der Wissenschaften. 汉译本：《[汉文经纬](http://ss.chaoxing.com/detail_38502727e7500f267263145b8f0d4a08e8f119fe1d4871971921b0a3ea25510134114c969f2eae5c891dbbc16f6853f6c49003cdc28b796729a46c91d054a15975755caf0cb8307a9a91d084a83f9082dbee62b8ac2d3a0684882097c756e02f4cd73b6bf75669750be53d09c89beee1)》，姚小平译，外语教学与研究出版社，2015 年。
 - <a name="hagberg2008"></a>Hagberg, A. A., Schult, D. A., & Swart, P. J. (2008). [Exploring network structure, dynamics, and function using NetworkX](http://conference.scipy.org/proceedings/SciPy2008/paper_2/). In G. Varoquaux, T. Vaught, & J. Millman (Eds.) *Proceedings of the 7th Python in Science Conference* (pp. 11-15). *Philosophical Transactions of the Royal Society B: Biological Sciences*, 365(1559), 3829-3843.
 - <a name="haudricourt1954"></a>Haudricourt, A.-G. 奥德里库尔 (1954). [Comment Reconstruire Le Chinois Archaïque](https://doi.org/10.1080/00437956.1954.11659532). *Word*, 10(2-3), 351-364.
@@ -158,7 +166,8 @@
 - <a name="hunter2007"></a>Hunter, J. D. (2007). [Matplotlib: A 2D Graphics Environment](https://doi.org/10.1109/MCSE.2007.55). *Computing in Science & Engineering*, 9(3), 90-95.
 - <a name="huson1998"></a>Huson, D. H. (1998). [SplitsTree: analyzing and visualizing evolutionary data](https://doi.org/10.1093/bioinformatics/14.1.68). *Bioinformatics*, 14(1), 68-73.
 - <a name="huson2006"></a>Huson, D. H., & Bryant, D. (2006). [Application of Phylogenetic Networks in Evolutionary Studies](https://doi.org/10.1093/molbev/msj030). *Molecular Biology and Evolution*, 23(2), 254-267. 
-- <a name="karlgren1950"></a>Karlgren, B. 高本汉 (1950). *The Book of Odes: Chinese text, transcription and translation*. Stockholm: Museum of Far Eastern Antiquities. 
+- <a name="karlgren1915"></a>Karlgren, B. 高本汉 (1915-1926). *Études sur la Phonologie Chinoise*. Leiden and Stockholm: Norstedt. 汉译本：《中国音韵学研究》，赵元任、罗常培、李方桂译，商务印书馆，1940 年。
+- <a name="karlgren1950"></a>—— (1950). *The Book of Odes: Chinese text, transcription and translation*. Stockholm: Museum of Far Eastern Antiquities. 
 - <a name="karlgren1957"></a>—— (1957). [Gramma Serica Recensa](http://ss.zhizhen.com/detail_38502727e7500f26f1ce104a15568ce8e2ee8db6d8d18d4d1921b0a3ea255101ff20232bc5d7271392ca6eb2c71318865155c5438fbb21eab02f26b59238cf601ee603dc6f3d002408283ada86f7e698?). *Bulletin of the Museum of Far Eastern Antiquities*, 29, 1-332. 汉译本：《[汉文典](http://ss.chaoxing.com/detail_38502727e7500f26ea2dfaed11771665fed4b47e2deecb0f1921b0a3ea25510134114c969f2eae5cc744720e3130b751ed88dfe5746c33d69cb51d43696fa7ef69b6d1a0a8fc4207a97d90f05deb3b9ddbee62b8ac2d3a0684882097c756e02f4cd73b6bf75669750be53d09c89beee1)》，潘悟云、杨剑桥、陈重业、张洪明译，上海辞书出版社，1997 年。
 - <a name="list2016"></a>List, J.-M. 游函 (2016). [Using network models to analyze Old Chinese rhyme data](https://doi.org/10.1163/2405478X-00902004) 用网络模型来分析古代汉语的韵母数据. *Bulletin of Chinese Linguistics* 中国语言学集刊, 9(2), 218-241. 数据和源代码见 [digling/shijing: Data and Code for the Shījīng Network Analysis (Version v1.0)](http://doi.org/10.5281/zenodo.167341). Zenodo. 
 - <a name="list2018"></a>—— (2018). [More on network approaches in Historical Chinese Phonology (音韻學)](https://hal.archives-ouvertes.fr/hal-01706927v2/document). Paper prepared for the LFK Society Young Scholars Symposium. Taipei: Li Fang-Kuei Society for Chinese Linguistics. 数据和源代码见. [Source Code Accompanying the Paper "More on network approaches in Historical Chinese Phonology (音韻學)"](http://doi.org/10.5281/zenodo.1171967). Zendo. 
