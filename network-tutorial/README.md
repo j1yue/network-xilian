@@ -212,7 +212,7 @@ plt.show()
 read_gexf(path/to.gexf) #.gexf文件的地址
 ````
 
-即可，如图所示：
+即可。这里我们以 Gephi 软件自带的示例文件 `les-miserables.gexf` 为例，这是雨果《悲惨世界》中的人物关系图，其效果如图所示：
 
 ![](pic/python-miserable.png)
 
@@ -257,17 +257,21 @@ plt.show()
 
 ### 2.2 批量导入数据
 
-　　**2.2.1** 在 Gephi 软件中可以直接导入数据。`.gexf` 格式的文件可以直接打开，如图所示：
+　　**2.2.1** 在 Gephi 软件中可以直接导入数据。`.gexf` 格式的文件可以直接打开。我们这里仍以 `les-miserables.gexf` 为例，如图所示：
 
 ![](pic/gephi-import-gexf.png)
 
 根据需要，选择导入到新的工作区（New workspace）或添加到现有工作区（Append to existing workspace）即可。
 
-　　**2.2.2** 但更多时候，我们只有原始数据，而需要软件为我们生成 `.gexf` 等网络图的格式，这时 Gephi 也能很好地满足我们的需要。导入的数据最好是 `.csv` 或 `.tsv` 格式，可以在 Excel 中通过文件另存为得到，也可以直接用文本编辑器（参见 [§1.1.2](#1.1-准备工作)）编辑。
+　　**2.2.2** 但更多时候，我们只有原始数据，而需要软件为我们生成 `.gexf` 等网络图的格式，这时 Gephi 也能很好地满足我们的需要，支持以表格的形式批量导入结点和边的数据。
+
+　　我们建议最好将源数据保存为 .csv 或 .tsv 格式，因为两者都是以纯文本的形式储存表格数据，因此和 .xlsx 等格式相比，储存空间较小，打开速度更快。两者差别只在于，各列之间的数据在.csv 文件中以英文逗号 , 分隔（即 Comma-Separated Value，逗号分隔值），而 .tsv 文件则是用制表符  分隔的（即 Tab-Separated Value，制表符分隔值）。下面的例子是 .csv 格式，可以直接在 Excel 中读写，完整数据请分别参见这个文件夹下的 `les-miserables-nodes.csv` 和 `les-miserables-edges.csv` 两个文件。
+
+　　Gephi 软件支持以表格的形式批量导入结点和边的数据。我们建议最好将源数据保存为 `.csv` 或 `.tsv` 格式，因为两者都是以纯文本的形式储存表格数据，因此和 `.xlsx` 等格式相比，储存空间较小，打开速度更快。两者差别只在于，各列之间的数据在`.csv` 文件中以英文逗号 `,` 分隔（即 Comma-Separated Value，逗号分隔值），而 `.tsv` 文件则是用制表符  分隔的（即 Tab-Separated Value，制表符分隔值）。下面的例子是 `.csv` 文件，可以直接在 Excel 中读写。
 
 　　结点的数据例如：
 
-````
+````csv
 Id,Label,timeset,modularity_class
 11,Valjean,,1
 48,Gavroche,,8
@@ -281,7 +285,7 @@ Id,Label,timeset,modularity_class
 
 　　边的数据例如：
 
-````
+````csv
 Source,Target,Type,Id,Label,timeset,Weight
 1,0,Undirected,0,,,1
 2,0,Undirected,1,,,8
@@ -297,7 +301,7 @@ Source,Target,Type,Id,Label,timeset,Weight
 
 ![](/pic/gephi-utf-8.png)
 
-导入结点和边的顺序并不固定，但在导入第二项时必须选择「添加到现有工作区」（Append to existing workspace），如图所示：
+导入结点和边的顺序可以颠倒，但在导入第二项时必须选择「添加到现有工作区」（Append to existing workspace），如图所示：
 
 ![](/pic/gephi-workspace.png)
 
@@ -317,9 +321,11 @@ Source,Target,Type,Id,Label,timeset,Weight
 
 ![](pic/gephi-appearance.png)
 
-　　**2.3.3** 除此之外，还可以在左下角的「布局」中进行更细致的调整，在此不再赘述。比如，`Fruchterman Reingold` 的效果如图所示：
+　　**2.3.3** 除此之外，还可以在左下角「布局」窗口中选择网络图不同的布局，比如 `Fruchterman Reingold` 布局的效果如图所示：
 
 ![](pic/gephi-reingold.png)
+
+我们还可以通过「布局」窗口下方的参数对网络图的外观进行更细致地调整。但由于我们可以直接利用 JavaScript 插件获得较好的显示效果，因此这里不再展开说明各个参数的用法了。
 
 ### 2.4 网络图的保存
 
@@ -327,7 +333,7 @@ Source,Target,Type,Id,Label,timeset,Weight
 
 　　如果要生成图片，有两种方式。其一是直接截屏，或者单击下方工具栏的照相机图标截屏。这种方式可以忠实地展现屏幕上的网络图，但图片的质量相对较低。另一种方法则是在菜单栏中选择 `文件(F) -> 输出 -> SVG/PDF/PNG文件`，然后在弹出的窗口中将「文件类型」设置为 `.png` 即可。
 
-　　如果要生成 `.gexf` 文件，在菜单栏中选择 `文件(F) -> 输出 -> 图文件...`，将保存的文件类型设置为 `.gexf` 即可。要生成 `.json` 文件，则需在菜单栏中选择 `工具(T) -> 插件(G) -> 可用插件 -> JSON Exporter`，安装完成后，就可以按上述方法导出了。
+　　如果要生成 `.gexf` 文件，在菜单栏中选择 `文件(F) -> 输出 -> 图文件...`，将保存的文件类型设置为 `.gexf` 即可。要生成 `.json` 文件，则需在菜单栏中选择 `工具(T) -> 插件(G) -> 可用插件 -> JSON Exporter`，安装完成后，就可以按上述方法导出了。输出后的结果可以分别参见本文件夹下的 `les-miserables.gexf` 和 `les-miserables.json` 两个文件。
 
 ## 3. JavaScript
 
