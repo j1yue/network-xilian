@@ -295,7 +295,7 @@ Source,Target,Type,Id,Label,timeset,Weight
 ...
 ````
 
-其中 `Source` 是边的头（源节点），`Target` 是边的尾（目标节点），`Type ` 可以填写 `Undirected` 表示无向图，或用 `Directed` 表示有向图，以上三个参数是必不可少的。
+其中 `Source` 是边的头（源节点），`Target` 是边的尾（目标节点）；`Type ` 可以填写 `Undirected` 表示无向图，或用 `Directed` 表示有向图。以上三个参数是必不可少的。注意：`Source` 和 `Target` 两列中的数据都必须是结点的 `Id` 而非 `Label`，因为 `Id` 才是系统中储存的结点的名称。
 
 　　编辑好数据后，在刚才添加结点和边的「数据资料」界面，单击「输入电子表格」，选择 `.csv` 文件后，确认输入的是结点或边的表格，注意要将字符集选为 `UTF-8` 才能正确显示汉字字符，如图所示：
 
