@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.3" version="1.3" xmlns:viz="http://www.gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.3 http://www.gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2019-08-16">
+    <creator>Gephi 0.9</creator>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="directed" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="initial" title="initial" type="string"></attribute>
+      <attribute id="rhyme" title="rhyme" type="string"></attribute>
+      <attribute id="deng_hu" title="deng_hu" type="string"></attribute>
+      <attribute id="char_num" title="char_num" type="integer"></attribute>
+    </attributes>
+    <nodes>
+      <node id="cje" label="【支】章移">
+        <attvalues>
+          <attvalue for="initial" value="章"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="29"></attvalue>
+        </attvalues>
+        <viz:size value="18.363636"></viz:size>
+        <viz:position x="-54.996365" y="46.462032"></viz:position>
+        <viz:color r="182" g="162" b="125"></viz:color>
+      </node>
+      <node id="je" label="【移】弋支">
+        <attvalues>
+          <attvalue for="initial" value="以"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="32"></attvalue>
+        </attvalues>
+        <viz:size value="15.09091"></viz:size>
+        <viz:position x="-35.11104" y="82.96974"></viz:position>
+        <viz:color r="108" g="99" b="86"></viz:color>
+      </node>
+      <node id="ye" label="【爲】薳支">
+        <attvalues>
+          <attvalue for="initial" value="云"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三B"></attvalue>
+          <attvalue for="char_num" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="20.0"></viz:size>
+        <viz:position x="-45.44629" y="-42.833595"></viz:position>
+        <viz:color r="136" g="131" b="129"></viz:color>
+      </node>
+      <node id="kye" label="【嬀】居爲">
+        <attvalues>
+          <attvalue for="initial" value="見"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三B"></attvalue>
+          <attvalue for="char_num" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-36.70564" y="-52.313416"></viz:position>
+        <viz:color r="182" g="187" b="170"></viz:color>
+      </node>
+      <node id="hye" label="【&#x2a3ae;】許爲">
+        <attvalues>
+          <attvalue for="initial" value="曉"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三B"></attvalue>
+          <attvalue for="char_num" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-44.808052" y="-55.349476"></viz:position>
+        <viz:color r="164" g="128" b="112"></viz:color>
+      </node>
+      <node id="qye" label="【逶】於爲">
+        <attvalues>
+          <attvalue for="initial" value="影"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三B"></attvalue>
+          <attvalue for="char_num" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-56.068188" y="-37.376427"></viz:position>
+        <viz:color r="191" g="176" b="153"></viz:color>
+      </node>
+      <node id="mie" label="【糜】靡爲">
+        <attvalues>
+          <attvalue for="initial" value="明"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-38.4106" y="-32.14552"></viz:position>
+        <viz:color r="194" g="156" b="142"></viz:color>
+      </node>
+      <node id="hjye" label="【隓】許規">
+        <attvalues>
+          <attvalue for="initial" value="曉"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="22.701553" y="-87.76304"></viz:position>
+        <viz:color r="164" g="128" b="112"></viz:color>
+      </node>
+      <node id="drye" label="【鬌】直垂">
+        <attvalues>
+          <attvalue for="initial" value="澄"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三B"></attvalue>
+          <attvalue for="char_num" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-74.59817" y="-98.27661"></viz:position>
+        <viz:color r="104" g="117" b="96"></viz:color>
+      </node>
+      <node id="zjye" label="【&#x2136e;】是爲">
+        <attvalues>
+          <attvalue for="initial" value="常"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="10"></attvalue>
+        </attvalues>
+        <viz:size value="10.181818"></viz:size>
+        <viz:position x="-64.47116" y="-97.61622"></viz:position>
+        <viz:color r="210" g="177" b="176"></viz:color>
+      </node>
+      <node id="lye" label="【羸】力爲">
+        <attvalues>
+          <attvalue for="initial" value="來"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-32.868942" y="-37.84861"></viz:position>
+        <viz:color r="163" g="149" b="130"></viz:color>
+      </node>
+      <node id="chjye" label="【吹】昌垂">
+        <attvalues>
+          <attvalue for="initial" value="昌"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="3.6363637"></viz:size>
+        <viz:position x="-70.829796" y="-119.577614"></viz:position>
+        <viz:color r="110" g="81" b="76"></viz:color>
+      </node>
+      <node id="phie" label="【鈹】敷羈">
+        <attvalues>
+          <attvalue for="initial" value="滂"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="12"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="206.34454" y="3.2925475"></viz:position>
+        <viz:color r="132" g="122" b="89"></viz:color>
+      </node>
+      <node id="pie" label="【陂】彼爲">
+        <attvalues>
+          <attvalue for="initial" value="幫"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-48.07177" y="-30.96182"></viz:position>
+        <viz:color r="204" g="182" b="143"></viz:color>
+      </node>
+      <node id="zsye" label="【隨】旬爲">
+        <attvalues>
+          <attvalue for="initial" value="邪"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="3"></attvalue>
+        </attvalues>
+        <viz:size value="5.2727275"></viz:size>
+        <viz:position x="-6.8853917" y="-65.70826"></viz:position>
+        <viz:color r="89" g="81" b="70"></viz:color>
+      </node>
+      <node id="khye" label="【虧】去爲">
+        <attvalues>
+          <attvalue for="initial" value="溪"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三B"></attvalue>
+          <attvalue for="char_num" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-32.41612" y="-45.416115"></viz:position>
+        <viz:color r="79" g="92" b="75"></viz:color>
+      </node>
+      <node id="khjye" label="【闚】去隨">
+        <attvalues>
+          <attvalue for="initial" value="溪"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="1.0193931" y="-68.17513"></viz:position>
+        <viz:color r="79" g="92" b="75"></viz:color>
+      </node>
+      <node id="gie" label="【竒】渠羈">
+        <attvalues>
+          <attvalue for="initial" value="群"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="10"></attvalue>
+        </attvalues>
+        <viz:size value="3.6363637"></viz:size>
+        <viz:position x="195.83852" y="-8.214257"></viz:position>
+        <viz:color r="100" g="87" b="60"></viz:color>
+      </node>
+      <node id="gje" label="【祇】巨支">
+        <attvalues>
+          <attvalue for="initial" value="群"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="25"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-44.323833" y="50.995224"></viz:position>
+        <viz:color r="100" g="87" b="60"></viz:color>
+      </node>
+      <node id="hie" label="【犧】許羈">
+        <attvalues>
+          <attvalue for="initial" value="曉"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="18"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="193.4076" y="3.4188075"></viz:position>
+        <viz:color r="164" g="128" b="112"></viz:color>
+      </node>
+      <node id="khie" label="【㩻】去奇">
+        <attvalues>
+          <attvalue for="initial" value="溪"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="191.55815" y="-16.371258"></viz:position>
+        <viz:color r="79" g="92" b="75"></viz:color>
+      </node>
+      <node id="ngie" label="【宜】魚羈">
+        <attvalues>
+          <attvalue for="initial" value="疑"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="10.181818"></viz:size>
+        <viz:position x="200.8416" y="28.616415"></viz:position>
+        <viz:color r="135" g="124" b="108"></viz:color>
+      </node>
+      <node id="bie" label="【皮】符羈">
+        <attvalues>
+          <attvalue for="initial" value="並"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="189.31673" y="9.503069"></viz:position>
+        <viz:color r="158" g="141" b="140"></viz:color>
+      </node>
+      <node id="zje" label="【提】是支">
+        <attvalues>
+          <attvalue for="initial" value="常"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="12"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-58.88808" y="57.084835"></viz:position>
+        <viz:color r="210" g="177" b="176"></viz:color>
+      </node>
+      <node id="nje" label="【兒】汝移">
+        <attvalues>
+          <attvalue for="initial" value="日"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-21.29379" y="86.078384"></viz:position>
+        <viz:color r="165" g="168" b="125"></viz:color>
+      </node>
+      <node id="lie" label="【離】呂支">
+        <attvalues>
+          <attvalue for="initial" value="來"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="37"></attvalue>
+        </attvalues>
+        <viz:size value="6.909091"></viz:size>
+        <viz:position x="-95.65801" y="67.81654"></viz:position>
+        <viz:color r="163" g="149" b="130"></viz:color>
+      </node>
+      <node id="zie" label="【疵】疾移">
+        <attvalues>
+          <attvalue for="initial" value="從"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="8"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-37.02915" y="96.61255"></viz:position>
+        <viz:color r="89" g="81" b="70"></viz:color>
+      </node>
+      <node id="cie" label="【貲】即移">
+        <attvalues>
+          <attvalue for="initial" value="精"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="16"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-22.401287" y="92.902916"></viz:position>
+        <viz:color r="115" g="112" b="112"></viz:color>
+      </node>
+      <node id="kie" label="【羈】居宜">
+        <attvalues>
+          <attvalue for="initial" value="見"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="10.181818"></viz:size>
+        <viz:position x="200.33606" y="10.383031"></viz:position>
+        <viz:color r="182" g="187" b="170"></viz:color>
+      </node>
+      <node id="pje" label="【卑】府移">
+        <attvalues>
+          <attvalue for="initial" value="幫"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-28.578947" y="91.97693"></viz:position>
+        <viz:color r="204" g="182" b="143"></viz:color>
+      </node>
+      <node id="bje" label="【陴】符支">
+        <attvalues>
+          <attvalue for="initial" value="並"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="15"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-65.98656" y="40.880108"></viz:position>
+        <viz:color r="158" g="141" b="140"></viz:color>
+      </node>
+      <node id="sje" label="【䌳】式支">
+        <attvalues>
+          <attvalue for="initial" value="書"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="12"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-58.721355" y="35.193626"></viz:position>
+        <viz:color r="89" g="81" b="70"></viz:color>
+      </node>
+      <node id="sie" label="【斯】息移">
+        <attvalues>
+          <attvalue for="initial" value="心"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="26"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-42.36752" y="92.505905"></viz:position>
+        <viz:color r="89" g="88" b="90"></viz:color>
+      </node>
+      <node id="chrie" label="【差】楚宜">
+        <attvalues>
+          <attvalue for="initial" value="初"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="190.00406" y="31.001738"></viz:position>
+        <viz:color r="131" g="142" b="118"></viz:color>
+      </node>
+      <node id="thrie" label="【摛】丑知">
+        <attvalues>
+          <attvalue for="initial" value="徹"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="9"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-121.73027" y="82.37132"></viz:position>
+        <viz:color r="155" g="168" b="149"></viz:color>
+      </node>
+      <node id="mje" label="【彌】武移">
+        <attvalues>
+          <attvalue for="initial" value="明"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="17"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-30.297972" y="98.08533"></viz:position>
+        <viz:color r="194" g="156" b="142"></viz:color>
+      </node>
+      <node id="chie" label="【雌】此移">
+        <attvalues>
+          <attvalue for="initial" value="清"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="5"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-23.375185" y="79.84396"></viz:position>
+        <viz:color r="176" g="143" b="112"></viz:color>
+      </node>
+      <node id="trie" label="【知】陟離">
+        <attvalues>
+          <attvalue for="initial" value="知"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="3.6363637"></viz:size>
+        <viz:position x="-113.88656" y="78.04951"></viz:position>
+        <viz:color r="123" g="142" b="134"></viz:color>
+      </node>
+      <node id="qie" label="【漪】於離">
+        <attvalues>
+          <attvalue for="initial" value="影"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="11"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-104.52655" y="66.1666"></viz:position>
+        <viz:color r="191" g="176" b="153"></viz:color>
+      </node>
+      <node id="drie" label="【馳】直離">
+        <attvalues>
+          <attvalue for="initial" value="澄"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="13"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-100.019394" y="75.464134"></viz:position>
+        <viz:color r="104" g="117" b="96"></viz:color>
+      </node>
+      <node id="sye" label="【眭】息爲">
+        <attvalues>
+          <attvalue for="initial" value="心"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-53.67147" y="-51.438793"></viz:position>
+        <viz:color r="89" g="88" b="90"></viz:color>
+      </node>
+      <node id="ngye" label="【危】魚爲">
+        <attvalues>
+          <attvalue for="initial" value="疑"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三B"></attvalue>
+          <attvalue for="char_num" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="3.6363637"></viz:size>
+        <viz:position x="-68.66866" y="-46.634563"></viz:position>
+        <viz:color r="135" g="124" b="108"></viz:color>
+      </node>
+      <node id="hje" label="【詑】香支">
+        <attvalues>
+          <attvalue for="initial" value="曉"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-42.870586" y="42.522186"></viz:position>
+        <viz:color r="164" g="128" b="112"></viz:color>
+      </node>
+      <node id="srie" label="【釃】所宜">
+        <attvalues>
+          <attvalue for="initial" value="生"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="7"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="207.11063" y="35.97754"></viz:position>
+        <viz:color r="137" g="105" b="97"></viz:color>
+      </node>
+      <node id="srye" label="【䪎】山垂">
+        <attvalues>
+          <attvalue for="initial" value="生"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三B"></attvalue>
+          <attvalue for="char_num" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-62.842163" y="-107.847496"></viz:position>
+        <viz:color r="137" g="105" b="97"></viz:color>
+      </node>
+      <node id="njye" label="【痿】人垂">
+        <attvalues>
+          <attvalue for="initial" value="日"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-71.55575" y="-105.14963"></viz:position>
+        <viz:color r="165" g="168" b="125"></viz:color>
+      </node>
+      <node id="cye" label="【厜】姊規">
+        <attvalues>
+          <attvalue for="initial" value="精"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="26.138718" y="-81.308975"></viz:position>
+        <viz:color r="115" g="112" b="112"></viz:color>
+      </node>
+      <node id="kjye" label="【&#x294f8;】居隋">
+        <attvalues>
+          <attvalue for="initial" value="見"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="13"></attvalue>
+        </attvalues>
+        <viz:size value="5.2727275"></viz:size>
+        <viz:position x="16.519" y="-80.368835"></viz:position>
+        <viz:color r="182" g="187" b="170"></viz:color>
+      </node>
+      <node id="chrye" label="【衰】楚危">
+        <attvalues>
+          <attvalue for="initial" value="初"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三B"></attvalue>
+          <attvalue for="char_num" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-78.6366" y="-47.89328"></viz:position>
+        <viz:color r="131" g="142" b="118"></viz:color>
+      </node>
+      <node id="trye" label="【腄】竹垂">
+        <attvalues>
+          <attvalue for="initial" value="知"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三B"></attvalue>
+          <attvalue for="char_num" value="4"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-56.48727" y="-104.02119"></viz:position>
+        <viz:color r="123" g="142" b="134"></viz:color>
+      </node>
+      <node id="chje" label="【眵】叱支">
+        <attvalues>
+          <attvalue for="initial" value="昌"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-48.663315" y="36.199394"></viz:position>
+        <viz:color r="110" g="81" b="76"></viz:color>
+      </node>
+      <node id="crie" label="【齜】側宜">
+        <attvalues>
+          <attvalue for="initial" value="莊"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="199.661" y="39.524494"></viz:position>
+        <viz:color r="185" g="161" b="160"></viz:color>
+      </node>
+      <node id="phje" label="【&#x24fce;】匹支">
+        <attvalues>
+          <attvalue for="initial" value="滂"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三A"></attvalue>
+          <attvalue for="char_num" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-66.43591" y="49.95064"></viz:position>
+        <viz:color r="132" g="122" b="89"></viz:color>
+      </node>
+      <node id="jye" label="【䔺】悅吹">
+        <attvalues>
+          <attvalue for="initial" value="以"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="合三A"></attvalue>
+          <attvalue for="char_num" value="6"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="-73.03878" y="-128.66628"></viz:position>
+        <viz:color r="108" g="99" b="86"></viz:color>
+      </node>
+      <node id="zrie" label="【齹】士宜">
+        <attvalues>
+          <attvalue for="initial" value="崇"></attvalue>
+          <attvalue for="rhyme" value="上平05支"></attvalue>
+          <attvalue for="deng_hu" value="開三B"></attvalue>
+          <attvalue for="char_num" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="2.0"></viz:size>
+        <viz:position x="192.845" y="37.34552"></viz:position>
+        <viz:color r="214" g="171" b="145"></viz:color>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="87" source="cje" target="je"></edge>
+      <edge id="88" source="je" target="cje"></edge>
+      <edge id="89" source="ye" target="cje"></edge>
+      <edge id="90" source="kye" target="ye"></edge>
+      <edge id="91" source="hye" target="ye"></edge>
+      <edge id="92" source="qye" target="ye"></edge>
+      <edge id="93" source="mie" target="ye"></edge>
+      <edge id="94" source="hjye" target="kjye"></edge>
+      <edge id="95" source="drye" target="zjye"></edge>
+      <edge id="96" source="zjye" target="ye"></edge>
+      <edge id="97" source="lye" target="ye"></edge>
+      <edge id="98" source="chjye" target="zjye"></edge>
+      <edge id="99" source="phie" target="kie"></edge>
+      <edge id="100" source="pie" target="ye"></edge>
+      <edge id="101" source="zsye" target="ye"></edge>
+      <edge id="102" source="khye" target="ye"></edge>
+      <edge id="103" source="khjye" target="zsye"></edge>
+      <edge id="104" source="gie" target="kie"></edge>
+      <edge id="105" source="gje" target="cje"></edge>
+      <edge id="106" source="hie" target="kie"></edge>
+      <edge id="107" source="khie" target="gie"></edge>
+      <edge id="108" source="ngie" target="kie"></edge>
+      <edge id="109" source="bie" target="kie"></edge>
+      <edge id="110" source="zje" target="cje"></edge>
+      <edge id="111" source="nje" target="je"></edge>
+      <edge id="112" source="lie" target="cje"></edge>
+      <edge id="113" source="zie" target="je"></edge>
+      <edge id="114" source="cie" target="je"></edge>
+      <edge id="115" source="kie" target="ngie"></edge>
+      <edge id="116" source="pje" target="je"></edge>
+      <edge id="117" source="bje" target="cje"></edge>
+      <edge id="118" source="sje" target="cje"></edge>
+      <edge id="119" source="sie" target="je"></edge>
+      <edge id="120" source="chrie" target="ngie"></edge>
+      <edge id="121" source="thrie" target="trie"></edge>
+      <edge id="122" source="mje" target="je"></edge>
+      <edge id="123" source="chie" target="je"></edge>
+      <edge id="124" source="trie" target="lie"></edge>
+      <edge id="125" source="qie" target="lie"></edge>
+      <edge id="126" source="drie" target="lie"></edge>
+      <edge id="127" source="sye" target="ye"></edge>
+      <edge id="128" source="ngye" target="ye"></edge>
+      <edge id="129" source="hje" target="cje"></edge>
+      <edge id="130" source="srie" target="ngie"></edge>
+      <edge id="131" source="srye" target="zjye"></edge>
+      <edge id="132" source="njye" target="zjye"></edge>
+      <edge id="133" source="cye" target="kjye"></edge>
+      <edge id="134" source="kjye" target="zsye"></edge>
+      <edge id="135" source="chrye" target="ngye"></edge>
+      <edge id="136" source="trye" target="zjye"></edge>
+      <edge id="137" source="chje" target="cje"></edge>
+      <edge id="138" source="crie" target="ngie"></edge>
+      <edge id="139" source="phje" target="cje"></edge>
+      <edge id="140" source="jye" target="chjye"></edge>
+      <edge id="141" source="zrie" target="ngie"></edge>
+    </edges>
+  </graph>
+</gexf>
