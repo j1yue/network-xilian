@@ -1,6 +1,6 @@
 # 网络图的绘制方法
 
-　　本文主要介绍用计算机绘制网络图的具体操作方法。我们[此前](../intro-and-lit-review/README.md#2-网络图的实现方法)已经比较了比较了 Python、JavaScript 脚本和网络分析软件三种不同绘制方法特点，并提出了相对简便易行的操作步骤，即：用 Gephi 软件处理数据，再用各种 JavaScript 脚本完成可视化。由于篇幅所限，各种工具的操作方法不能一一展开，这里只是根据我们的需要，有侧重地加以说明。
+　　本文主要介绍用计算机绘制网络图的具体操作方法。由于篇幅所限，各种工具的操作方法不能一一展开，这里只是根据我们的需要，有侧重地加以说明。
 
 <!-- TOC -->
 
@@ -20,14 +20,15 @@
     - [3.2 Gexf.js](#32-gexfjs)
     - [3.3 Sigma.js](#33-sigmajs)
     - [3.4 其他 JavaScript 脚本](#34-%e5%85%b6%e4%bb%96-javascript-%e8%84%9a%e6%9c%ac)
+  - [4. 参考文献](#4.-参考文献)
 
 <!-- /TOC -->
 
 ## 1. Python
 
-　　[Python](https://www.python.org/) 是一种计算机程序设计语言，以其简单易学、功能强大的特点，得到了十分广泛的应用。我们可以通过 Python 的 [Matplotlib]((https://matplotlib.org/))（Hunter, [2007](https://doi.org/10.1109/MCSE.2007.55)）和 [NetworkX](https://networkx.github.io/)（Hagberg *et al.*, [2008](conference.scipy.org/proceedings/SciPy2008/paper_2/)）两个扩展包进行网络图的制作和分析。
+　　[Python](https://www.python.org/) 是一种计算机程序设计语言，以其简单易学、功能强大的特点，得到了十分广泛的应用。我们可以通过 Python 的 [Matplotlib]((https://matplotlib.org/))（Hunter, [2007](#hunter2007)）和 [NetworkX](https://networkx.github.io/)（Hagberg *et al.*, [2008](#hagberg2008)）两个扩展包进行网络图的制作和分析。
 
-　　虽然使用 Python 绘制网络图对编程知识的要求相对较高，但由于目前主要的研究成果大多都是用 Python 完成的（参见 List, [2016](https://doi.org/10.1163/2405478X-00902004); [2018](https://hal.archives-ouvertes.fr/hal-01706927v2/document) 等），而作者基本上也都在网络上公开了其数据和源代码，因此我们简单介绍 Python 的使用方法，以便更好地分析、利用其他学者的研究成果。
+　　虽然使用 Python 绘制网络图对编程知识的要求相对较高，但由于目前主要的研究成果大多都是用 Python 完成的（参见 List, [2016](#list2016); [2018](#list2018) 等），而作者基本上也都在网络上公开了其数据和源代码，因此我们简单介绍 Python 的使用方法，以便更好地分析、利用其他学者的研究成果。
 
 ### 1.1 准备工作
 
@@ -321,11 +322,11 @@ Source,Target,Type,Id,Label,timeset,Weight
 
 ![](pic/gephi-appearance.png)
 
-　　**2.3.3** 除此之外，还可以在左下角「布局」窗口中选择网络图不同的布局，比如 `Fruchterman Reingold` 布局的效果如图所示：
+　　**2.3.3** 除此之外，还可以在左下角「布局」窗口中选择网络图不同的布局。其中，最前的 `Force Atlas`、`ForceAtlas 2`、`Fruchterman Reingold`、`OpenOrd`、`Yifan Hu` 和 `Yifan Hu 比例` 六种是力导向布局，模拟物理世界中的引力和斥力。比如 `Fruchterman Reingold` 布局的效果如图所示：
 
 ![](pic/gephi-reingold.png)
 
-我们还可以通过「布局」窗口下方的参数对网络图的外观进行更细致地调整。但由于我们可以直接利用 JavaScript 插件获得较好的显示效果，因此这里不再展开说明各个参数的用法了。
+我们还可以通过「布局」窗口下方的参数对网络图的外观进行更细致地调整。而`Rotate` 、`交叠`、`扩展`、`收缩`、`标签调整` 四种则属于辅助性布局，可以用来调整图的大小、方向并避免结点交叉。
 
 ### 2.4 网络图的保存
 
@@ -512,3 +513,10 @@ chart = {
 ![](pic/d3js-demo.png)
 
 其实，在同一个页面中，cell 的顺序是可以改变的。因此，我们也可以把最后的 `chart = {}` 代码块移至最前，再单击左侧的大头针按钮取消各 cell 代码的固定显示，使整个页面更加简洁。
+
+## 4. 参考文献
+
+- <a name="hagberg2008"></a>Hagberg, A. A., Schult, D. A., & Swart, P. J. (2008). [Exploring network structure, dynamics, and function using NetworkX](http://conference.scipy.org/proceedings/SciPy2008/paper_2/). In G. Varoquaux, T. Vaught, & J. Millman (Eds.) *Proceedings of the 7th Python in Science Conference* (pp. 11-15). *Philosophical Transactions of the Royal Society B: Biological Sciences*, 365(1559), 3829-3843.
+- <a name="hunter2007"></a>Hunter, J. D. (2007). [Matplotlib: A 2D Graphics Environment](https://doi.org/10.1109/MCSE.2007.55). *Computing in Science & Engineering*, 9(3), 90-95.
+- <a name="list2016"></a>List, J.-M. 游函 (2016). [Using network models to analyze Old Chinese rhyme data](https://doi.org/10.1163/2405478X-00902004) 用网络模型来分析古代汉语的韵母数据. *Bulletin of Chinese Linguistics* 中国语言学集刊, 9(2), 218-241. 数据和源代码见 [digling/shijing: Data and Code for the Shījīng Network Analysis (Version v1.0)](http://doi.org/10.5281/zenodo.167341). Zenodo. 
+- <a name="list2018"></a>—— (2018). [More on network approaches in Historical Chinese Phonology (音韻學)](https://hal.archives-ouvertes.fr/hal-01706927v2/document). Paper prepared for the LFK Society Young Scholars Symposium. Taipei: Li Fang-Kuei Society for Chinese Linguistics. 数据和源代码见. [Source Code Accompanying the Paper "More on network approaches in Historical Chinese Phonology (音韻學)"](http://doi.org/10.5281/zenodo.1171967). Zendo. 

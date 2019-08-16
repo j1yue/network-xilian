@@ -1,6 +1,6 @@
 # 用计算机系联《广韵》韵类
 
-　　下面说明利用网络分析软件系联《广韵》反切下字的方法。
+　　本文打算说明利用网络分析软件系联《广韵》反切下字的方法。
 
 ## 1. 思路
 
@@ -86,7 +86,7 @@ thriap,【𦑣】丑法,徹,上平01乏,開三,1
 
 　　各列的说明如下：
 
-1. `Id`：我们选择了网络上流传较广的 [@polyhedron](http://zh.wikipedia.org/zh/User:Polyhedron) 版中古汉语拼音（[2005/2019](#polyhedron2005)）而非汉字，理由见上 [§1.3](1-思路) 节；
+1. `Id`：我们使用的是网络上流传较广的 [@polyhedron](http://zh.wikipedia.org/zh/User:Polyhedron) 版中古汉语拼音（[2005/2019](#polyhedron2005)）而非汉字，理由见上 [§1.3](1-思路) 节；
 2. `Label`：包括小韵首字和反切；
 3. `Initial`：声母；
 4. `Rhyme`：韵目；
@@ -96,7 +96,7 @@ thriap,【𦑣】丑法,徹,上平01乏,開三,1
 　　**2.4** 下面我们编辑边的数据。类似地，新建文件 `edges.csv`，输入表头：
 
 ````csv
-Id,Source,Target,Type
+Id,Source,Target,Type,Weight
 ````
 
 在各列中分别输入：
@@ -106,30 +106,33 @@ Id,Source,Target,Type
 =xiaoyun.csv!AV2,
 =xiaoyun.csv!DC2,
 Directed
+=COUNTIF($C$2:$C$3819, B2)+1
 ````
 
 并填充至最后一行，结果如下所示：
 
 ````csv
 Id,Source,Target,Type
-1,tung,ghung,Directed
-2,dung,ghung,Directed
-3,triung,kiung,Directed
-4,driung,kiung,Directed
-5,cjung,njung,Directed
+1,tung,ghung,Directed,12
+2,dung,ghung,Directed,12
+3,triung,kiung,Directed,7
+4,driung,kiung,Directed,7
+5,cjung,njung,Directed,5
 ...
-3816,phyap,pyap,Directed
-3817,nriap,pyap,Directed
-3818,thriap,pyap,Directed
+3816,phyap,pyap,Directed,0
+3817,nriap,pyap,Directed,0
+3818,thriap,pyap,Directed,0
 ````
 
-其中 `Source` 是《广韵》中的全部小韵首字 $U$ 的中古汉语拼音（也就是 `nodes.csv` 中的 `Id` 一列）；`Target` 是其反切下字 $V_R$ 的拼音。 
+其中 `Source` 是《广韵》中的全部小韵首字 $U$ 的中古汉语拼音（也就是 `nodes.csv` 中的 `Id` 一列）；`Target` 是其反切下字 $V_R$ 的拼音。 最后一列 `Type` 计算了这个反切下字
 
 ## 3. 生成结果
 
 　　把上述数据保存后分别导入 Gephi 软件，经过对外观和布局适当的调整后，《广韵》全书反切下字系联的结果就如图所示：
 
-![](pic/whole.png)
+![](pic/rhyme-whole.png)
+
+
 
 
 
