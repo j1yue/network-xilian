@@ -1,0 +1,3 @@
+[0816/171542:INFO:exception_record.cc(518)] [QB]Process ID: 18256 Type: 2
+[0816/190454:ERROR:shell.cc(348)] Cannot client process matching existing identity:Name: exe:content_gpu User: 505C0EE9-3013-43C0-82B0-A84F50CF8D84 Instance: content_gpu
+[0816/190454:ERROR:browser_gpu_channel_host_factory.cc(119)] Failed to launch GPU process.

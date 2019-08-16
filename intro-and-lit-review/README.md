@@ -42,7 +42,7 @@
 2. [JavaScript](https://www.javascript.com) 脚本，比如 [AnyChart](https://www.anychart.com/chartopedia/chart-type/network-graph/)、[Cola.js](https://ialab.it.monash.edu/webcola/)、[D3.js](https://d3js.org/)、[ECharts.js](http://echarts.baidu.com/)、[Gexf.js](https://github.com/raphv/gexf-js)、[Sigma.js](http://sigmajs.org/) 和 [Vis.js](https://visjs.org/) 等；
 3. 其他网络分析及其可视化软件，如 [AllegroGraph](https://allegrograph.com/)、[Gephi](https://gephi.org/) 、[NetMiner](http://www.netminer.com/main/main-read.do) 等。
 
-除此之外，还有 [R](https://www.r-project.org/) 语言等很多工具或软件也可以实现类似的效果，具体情况可以参见维基百科的 [en:Social network analysis software](https://en.wikipedia.org/wiki/Social_network_analysis_software) 词条。
+除此之外，还有 [R](https://www.r-project.org/) 语言和在线平台 [Graph Commons](https://graphcommons.com) 等很多工具或软件也可以实现类似的效果，具体情况可以参见维基百科的 [en:Social network analysis software](https://en.wikipedia.org/wiki/Social_network_analysis_software) 词条。
 
 　　由于篇幅所限，每种工具的使用用法也各不相同，因此这里不打算介绍的操作步骤（可以参见[这篇文档](../network-tutorial/README.md)），只是对上述这三种方式的优缺点进行简要的评述。
 

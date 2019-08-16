@@ -52,11 +52,21 @@ $$\psi_G = \begin{cases} (U, V_R), &V_R \sub U \\ (U, U_R), &V_R \not\sub U \end
 
 将结果复制到新的表格中，保存为 `xiaoyun.csv`。注意：在使用 Excel 的另存为功能生成 `.csv` 文件时，保存类型应该选择 `CSV UTF-8 (逗号分隔) (*.csv)` 而非  `CSV (逗号分隔) (*.csv)`，这样可以防止汉字字符的编码错误。
 
-　　**2.2** 我们先编辑结点的数据。用 Excel 新建一个 `nodes.csv` 文件，在前两行中输入：
+　　**2.2** 我们先编辑结点的数据。用 Excel 新建一个 `nodes.csv` 文件，在第一行中输入表头：
 
 ````csv
-Id,Label,Initial,Rhyme,Char_num
-=xiaoyun.csv!AV2,="【"&xiaoyun.csv!X2&"】"&xiaoyun.csv!V2&xiaoyun.csv!W2,=xiaoyun.csv!AE2,=xiaoyun.csv!$AM$2&xiaoyun.csv!AN2,=xiaoyun.csv!AF2&xiaoyun.csv!AG2&RIGHT(xiaoyun.csv!AU2, 1),=xiaoyun.csv!AB3-xiaoyun.csv!AB2
+Id,Label,Initial,Rhyme,Deng_hu,Char_num
+````
+
+在第二行里分别输入（为了醒目其间，这里分为六行）：
+
+````csv
+=xiaoyun.csv!AV2,
+="【"&xiaoyun.csv!X2&"】"&xiaoyun.csv!V2&xiaoyun.csv!W2,
+=xiaoyun.csv!AE2,
+=xiaoyun.csv!AM2&xiaoyun.csv!AN2,
+=xiaoyun.csv!AF2&xiaoyun.csv!AG2&RIGHT(xiaoyun.csv!AU2, 1),
+=xiaoyun.csv!AB3-xiaoyun.csv!AB2
 ````
 
 然后利用 Excel 的快速填充功能，拖拽至工作表的第 3819 行，结果如下所示：
@@ -79,14 +89,23 @@ thriap,【𦑣】丑法,徹,上平01乏,開三,1
 1. `Id`：我们选择了网络上流传较广的 [@polyhedron](http://zh.wikipedia.org/zh/User:Polyhedron) 版中古汉语拼音（[2005/2019](#polyhedron2005)）而非汉字，理由见上 [§1.3](1-思路) 节；
 2. `Label`：包括小韵首字和反切；
 3. `Initial`：声母；
-4. `Deng_hu`：等和开合；
-5. `Char_num`：小韵收字。因为原表中没有《广韵》中各小韵的字数，所以我们用相邻两个字的《广韵》字序作了运算得到收字数。最后一个「𦑣」小韵的字数要在原表下的 `AB3819` 单元格补充数字 `25318`，才能得出正确的值。
+4. `Rhyme`：韵目；
+5. `Deng_hu`：等、开合；
+6. `Char_num`：小韵收字。因为原表中没有《广韵》中各小韵的字数，所以我们用相邻两个字的《广韵》字序作了运算得到收字数。最后一个「𦑣」小韵的字数要在原表下的 `AB3819` 单元格补充数字 `25318`，才能得出正确的值。
 
-　　**2.4** 下面我们编辑边的数据。类似地，新建文件 `edges.csv`，在前两行中输入：
+　　**2.4** 下面我们编辑边的数据。类似地，新建文件 `edges.csv`，输入表头：
 
 ````csv
 Id,Source,Target,Type
-1,tung,ghung,Directed
+````
+
+在各列中分别输入：
+
+````csv
+1,
+=xiaoyun.csv!AV2,
+=xiaoyun.csv!DC2,
+Directed
 ````
 
 并填充至最后一行，结果如下所示：
@@ -107,6 +126,10 @@ Id,Source,Target,Type
 其中 `Source` 是《广韵》中的全部小韵首字 $U$ 的中古汉语拼音（也就是 `nodes.csv` 中的 `Id` 一列）；`Target` 是其反切下字 $V_R$ 的拼音。 
 
 ## 3. 生成结果
+
+　　把上述数据保存后分别导入 Gephi 软件，经过对外观和布局适当的调整后，《广韵》全书反切下字系联的结果就如图所示：
+
+![](pic/whole.png)
 
 
 
