@@ -5,25 +5,25 @@
   "logo": {
     "file": "",
     "link": "",
-    "text": ""
+    "text": "姬越"
   },
   "text": {
     "more": "",
     "intro": "",
-    "title": ""
+    "title": "《广韵》反切下字系联"
   },
   "legend": {
     "edgeLabel": "基本条例",
-    "colorLabel": "声母",
+    "colorLabel": "韵目",
     "nodeLabel": "小韵"
   },
   "features": {
     "search": true,
-    "groupSelectorAttribute": false,
+    "groupSelectorAttribute": true,
     "hoverBehavior": "default"
   },
   "informationPanel": {
-    "groupByEdgeDirection": false,
+    "groupByEdgeDirection": true,
     "imageAttribute": false
   },
   "sigma": {
@@ -41,9 +41,9 @@
     },
     "graphProperties": {
       "maxEdgeSize": 0.5,
-      "minEdgeSize": 0.2,
-      "minNodeSize": 1,
-      "maxNodeSize": 7
+      "minEdgeSize": 20,
+      "minNodeSize": 0.5,
+      "maxNodeSize": 10
     },
     "mouseProperties": {
       "maxRatio": 20,
