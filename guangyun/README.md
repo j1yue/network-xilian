@@ -32,7 +32,9 @@ $$\psi_G=(U, V_R) \tag{2.1}$$
 
 $$\psi_G = \begin{cases} (U, V_R), &V_R \sub U \\ (U, U_R), &V_R \not\sub U \end{cases} \tag{2.2}$$
 
-　　在具体实践中，我们可以让计算机自动检索 $V_0$ 中所有结点所对应的 $U_R$，并将 $U_R$ 替换为目标结点。此外，还有一种更简单的办法：既然《广韵》中的每个小韵都和一个音节一一对应，那么我们可以把所有结点都以音标或序号的形式储存；这样一来，$V_0$ 和 $U_R$ 对计算机而言就是相同的两个结点，自然也就绕过了上述问题，可以直接系联起来了。这种方法还有另一个好处：只要原始数据处理得当，就可以很好地规避多音字的识别，这也是此前研究都悬而未决的问题。
+　　在具体实践中，我们可以让计算机自动检索 $V_0$ 中所有结点所对应的 $U_R$，并将 $U_R$ 替换为目标结点[^2]。此外，还有一种更简单的办法：既然《广韵》中的每个小韵都和一个音节一一对应，那么我们可以把所有结点都以音标或序号的形式储存；这样一来，$V_0$ 和 $U_R$ 对计算机而言就是相同的两个结点，自然也就绕过了上述问题，可以直接系联起来了。这种方法还有另一个好处：只要原始数据处理得当，就可以很好地规避多音字的识别，这也是此前研究都悬而未决的问题。
+
+[^2]: 邓家钰师兄在《广韵全字表》的基础上，利用 VBA 实现了这个功能，可以参见附件中的 `./raw-data/deng-approach.xlsm` 文件。
 
 　　**1.4** 以上是对陈澧《切韵考》中基本条例的应用。除此之外，陈澧还发明了分析条例和补充条例。其中，分析条例是把可能系联而实际上不同类的反切上下字区分开来；而补充条例则是用来解决实际上不同类却不能直接系联的情况，有「又音互见定声类」和「四声相承定韵类」两种（耿振生, [2004](#gengzhensheng2004): 35-40）。这两种方法在之前的研究中也没能得到很好的解决。
 
@@ -58,11 +60,11 @@ $$\psi_G = \begin{cases} (U, V_R), &V_R \sub U \\ (U, U_R), &V_R \not\sub U \end
 Id,Label,Initial,Rhyme,Deng_hu,Char_num
 ````
 
-在第二行里分别输入（为了醒目其间，这里分为六行）：
+在第二行里分别输入（为了醒目起见，这里分为六行）：
 
 ````csv
 =xiaoyun.csv!AV2,
-="【"&xiaoyun.csv!X2&"】"&xiaoyun.csv!V2&xiaoyun.csv!W2,
+="【"&xiaoyun.csv!X2&"】"&xiaoyun.csv!V2&xiaoyun.csv!W2&F2,
 =xiaoyun.csv!AE2,
 =xiaoyun.csv!AM2&xiaoyun.csv!AN2,
 =xiaoyun.csv!AF2&xiaoyun.csv!AG2&RIGHT(xiaoyun.csv!AU2, 1),
@@ -73,15 +75,15 @@ Id,Label,Initial,Rhyme,Deng_hu,Char_num
 
 ````csv
 Id,Label,Initial,Rhyme,Deng_hu,Char_num
-tung,【東】德紅,端,上平01東,開一,17
-dung,【同】徒紅,定,上平01東,開一,45
-triung,【中】陟弓,知,上平01東,開三,4
-driung,【蟲】直弓,澄,上平01東,開三,7
-cjung,【終】職戎,章,上平01東,開三,15
+tung,【東】德紅17,端,上平01東,開一,17
+dung,【同】徒紅45,定,上平01東,開一,45
+triung,【中】陟弓4,知,上平01東,開三,4
+driung,【蟲】直弓7,澄,上平01東,開三,7
+cjung,【終】職戎15,章,上平01東,開三,15
 ...
-phyap,【𥎰】孚法,滂,上平01乏,合三,3
-nriap,【䎎】女法,娘,上平01乏,開三,3
-thriap,【𦑣】丑法,徹,上平01乏,開三,1
+phyap,【𥎰】孚法3,滂,上平01乏,合三,3
+nriap,【䎎】女法3,娘,上平01乏,開三,3
+thriap,【𦑣】丑法1,徹,上平01乏,開三,1
 ````
 
 　　各列的说明如下：
@@ -96,7 +98,7 @@ thriap,【𦑣】丑法,徹,上平01乏,開三,1
 　　**2.4** 下面我们编辑边的数据。类似地，新建文件 `edges.csv`，输入表头：
 
 ````csv
-Id,Source,Target,Type,Weight
+Id,Source,Target,Type,Degree
 ````
 
 在各列中分别输入：
@@ -106,31 +108,35 @@ Id,Source,Target,Type,Weight
 =xiaoyun.csv!AV2,
 =xiaoyun.csv!DC2,
 Directed
-=COUNTIF($C$2:$C$3819, B2)+1
+=???
 ````
 
 并填充至最后一行，结果如下所示：
 
 ````csv
-Id,Source,Target,Type
-1,tung,ghung,Directed,12
-2,dung,ghung,Directed,12
-3,triung,kiung,Directed,7
-4,driung,kiung,Directed,7
-5,cjung,njung,Directed,5
+Id,Source,Target,Type,Degree
+1,tung,ghung,Directed,
+2,dung,ghung,Directed,
+3,triung,kiung,Directed,
+4,driung,kiung,Directed,
+5,cjung,njung,Directed,
 ...
-3816,phyap,pyap,Directed,0
-3817,nriap,pyap,Directed,0
-3818,thriap,pyap,Directed,0
+3816,phyap,pyap,Directed,
+3817,nriap,pyap,Directed,
+3818,thriap,pyap,Directed,
 ````
 
-其中 `Source` 是《广韵》中的全部小韵首字 $U$ 的中古汉语拼音（也就是 `nodes.csv` 中的 `Id` 一列）；`Target` 是其反切下字 $V_R$ 的拼音。 最后一列 `Type` 计算了这个反切下字
+其中 `Source` 是《广韵》中的全部小韵首字 $U$ 的中古汉语拼音（也就是 `nodes.csv` 中的 `Id` 一列）；`Target` 是其反切下字 $V_R$ 的拼音。 最后一列 `Degree` 表示的是结点的入度 $d_{D}^{-}$ 和出度 $d_{D}^{+}$ 之和。不难看出，对任意结点 $v \in U$，都有 $d_{D}^{+}(v)=1$，因此结点的度 $d_G(e)$ 实际上也就反映了这个小韵的字被用作反切下字的次数，如图所示：
 
-## 3. 生成结果
+![](pic/node-degree.png)
+
+
+
+## 3. 结果分析
 
 　　把上述数据保存后分别导入 Gephi 软件，经过对外观和布局适当的调整后，《广韵》全书反切下字系联的结果就如图所示：
 
-![](pic/rhyme-whole.png)
+
 
 
 
