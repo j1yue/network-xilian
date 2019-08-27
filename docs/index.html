@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh" class="han-la">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+
+  <style>
+    // interlinear.css 2/28/2009 Kevin B. McGowan <clunis@umich.edu>
+    // this first class is thorougly unnecessary unless you want to 
+    // be able to manipulate all of the glls in a given interlinear
+    .interlinear {
+        padding-left: 20px;
+    }
+    p.gloss, p.gl {
+        margin-bottom: 0px;
+    }
+    div.gll {
+        valign: top;
+        display: inline-table;
+        padding-right: 10px;
+        margin-bottom: 0px;
+    }
+    p.translation, p.trans, p.glt {
+        margin-top: 0px;
+    }
+        </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    window.$docsify = {
+      //repo: 'amadeus-ji/amadeus-ji.github.io', 右上角显示GitHub挂件
+      coverpage: true,
+      mergeNavbar: true, //小屏设备下合并导航栏到侧边栏
+      loadSidebar: false, //加载自定义侧边栏
+      maxLevel: 3, //渲染目录的最大层级
+    }
+  </script>
+
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+
+  <!--KaTeX-->
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+  <!--搜索栏-->
+  <script>
+      window.$docsify = {
+        search: 'auto', // 默认值
+    
+        search : [
+          '/',            // => /README.md
+          '/guide',       // => /guide.md
+          '/get-started', // => /get-started.md
+          '/zh-cn/',      // => /zh-cn/README.md
+        ],
+    
+        // 完整配置参数
+        search: {
+          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+          paths: [], // or 'auto'
+          placeholder: '搜索',
+          noData: '找不到结果',
+          depth: 2, // 搜索标题的最大程级, 1 - 6
+        }
+      },
+    </script>
+    <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+
+  <!--代码高亮-->
+  <script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-powershell.min.js"></script>
+
+  <!--图片缩放-->
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+
+</body>
+</html>
