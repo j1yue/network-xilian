@@ -85,7 +85,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 &emsp;&emsp;在命令提示符中编程，好处是每一步都能直接看到结果，但却不能保存，每次运行时都要重新输入一遍，效率比较低。因此，我们还需要一个文本编辑器，常用的有 [Notepad++](https://notepad-plus-plus.org/)、[Sublime Text](www.sublimetext.com/)、[Atom](www.atom.io/) 和 [Visual Studio Code](https://code.visualstudio.com/) 等等，可以任选其一。注意：在编程时不能使用 Word 或系统自带的记事本。因为这两者都不是纯文本编辑器，会加入一些其他信息导致程序运行错误。在编辑器中完成开发后，保存为 `xxx.py` 格式即可。
 
-&emsp;&emsp;要打开一个 `.py` 文件，需要在命令行中通过 `cd` 命令打开文件所在的路径[^2]，然后输入：
+&emsp;&emsp;要打开一个 `.py` 文件，需要在命令行中通过 `cd` 命令打开文件所在的路径，然后输入：
 
 ````powershell
 python abc.py
@@ -369,7 +369,7 @@ $$W_{AB} = \frac{1}{G_{AB}-1} \tag{3}$$
 
 图中共有结点 1845 个。理论上说，边的数量是：
 $$\nu = \frac{\epsilon^2-\epsilon}{2} = \frac{1845^2-1845}{2} = 1701090 \tag{4}$$
-但实际上只有 5266 条。有趣的是，**几乎所有结点都是相连接的**。其中最多的有 1539 个字，占总数的 83%；其次的有 67 个字，占总数的 4%。但其实，整张图的结构还是能分成几个不同的部分，以最中央的之部为例：
+但实际上只有 5266 条。有趣的是，**几乎所有结点都是可以相连的**。其中最多的有 1539 个字，占总数的 83%；其次的有 67 个字，占总数的 4%。但其实，整张图的结构还是能分成几个不同的部分，以最中央的之部为例：
 
 ![](media\list-2016-fig6.png)
 
@@ -430,8 +430,6 @@ $$\psi_G(e_i)=\{u_i, v_i\} \tag{5}$$
 &emsp;&emsp;（4）奥德里库尔（Haudricourt, [1954](#haudricourt54)）认为去声来自 \*-s 后缀，在和入声字谐声时，分别带 \*-ks、\*-ps 和 \*-ts 尾。其中的 \*-ts 在中古变为 -*j* 韵尾（\*-ts > \*-js > -*jH*），而 \*-ps 在更早的阶段与 \*-ts 合流，之后很快也经历了上述演变，因此在谐声系列中有 -p 和 -t 相混的例子，如 #0695「入 \*-p~ : 内 -\*ts : 讷 -\*t」。经检索，这样的谐声系列只有上述 #0695 一组。因此文章认为，尽管可能检索程序并不完善，但至少说明 \*-ps > \*-ts 的假说没有在谐声字中有直接的反映。
 
 &emsp;&emsp;（5）甲伯连孜（Gabelentz, [1881](#gabelentz81)）注意到见组和来母的谐声，并认为见组来自 \*Kr- 声母，来母来自前缀 \*kə- 和 \*r- 声母。检索出的结果只有 13 组，而只有 #0766「各/路」一组是纯粹的见组和来母的谐声，因此文章认为此说是非常站不住脚的。
-
-&emsp;&emsp;原始数据和处理结果分别见附件（[2019](#hill19)）中的 `/data` 和 `/output` 两个文件夹，在此不再赘述。
 
 ### 3.4. 其他
 
@@ -591,17 +589,13 @@ Id,Source,Target,Type,Weight
 
 为了查看的方便，我们利用 Sigma.js 脚本把上述两种布局渲染为 HTML 文件，请分别参看 [Atlas Force 2](demo/gy-rhymes-force2/index.html ':ignore') 和 [Fruchterman Reingold](demo/gy-rhymes-force2/reingold.html ':ignore') 网页。
 
-&emsp;&emsp;根据网络图和 Gephi 软件的统计数据，我们不难发现，在共计 3818 个结点中，度的最大值 $\Delta (G) = 23$ 出现于去声四十一漾韵中的亮小韵（其中一共只有 32 个小韵）；但平均度 $\bar \delta (G) = 1$，也就是说有绝大多数（2726 个，占总数超过七成）结点的入度 $\delta_{G}^{-} = 0$，如下图所示：
+&emsp;&emsp;根据网络图和 Gephi 软件的统计数据，我们不难发现，在共计 3818 个结点中，度的最大值 $\Delta (G) = 23$ 出现于去声四十一漾韵中的亮小韵（其中一共只有 32 个小韵）；但平均度 $\bar \delta (G) = 1$，也就是说有绝大多数（2726 个，占总数超过七成）结点的入度 $\delta_{G}^{-} = 0$，如下所示：
 
 <iframe width="100%" height="450" src="https://www.itushuo.com/embed/dumiw" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 此外，图中的连接部件共有 308 个，比《广韵》的韵目数多出一半之多。不难看出，这是用了其他韵的反切下字造成的。
 
 ## 5. 结语
-
----
-
-# 附录
 
 
 
